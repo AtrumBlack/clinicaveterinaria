@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <SplitPane dividerPositions="0.48328877005347587" layoutX="133.0" layoutY="58.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="84.0" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-usuario-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="47.0" layoutY="237.0" text="Pet Shop" textFill="#fafafa">
+                           <font>
+                              <Font name="Tahoma Bold" size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="79.8" layoutY="61.0" text="Bienvenidos" textFill="#256b51" AnchorPane.leftAnchor="81.0" AnchorPane.rightAnchor="81.0">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="79.8" layoutY="142.0" promptText="Usuario" styleClass="jfx-text-field" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="77.0" />
+                        <PasswordField layoutX="89.0" layoutY="201.0" promptText="Password" styleClass="jfx-text-field" AnchorPane.leftAnchor="77.0" AnchorPane.rightAnchor="77.0" />
+                        <JFXButton layoutX="91.2" layoutY="277.0" prefHeight="38.0" prefWidth="122.0" styleClass="jfx-btn-login" text="Login" AnchorPane.leftAnchor="91.2" AnchorPane.rightAnchor="91.19999999999999" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

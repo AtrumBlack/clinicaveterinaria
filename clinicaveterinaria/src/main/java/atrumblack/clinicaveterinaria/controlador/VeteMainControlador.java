@@ -626,7 +626,7 @@ public class VeteMainControlador implements Initializable {
 
                 main_btn_salir.getScene().getWindow().hide();
                 //clinicaveterinaria/src/main/resources/templates
-                Parent root = FXMLLoader.load(getClass().getResource("/templates/cliente.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/templates/logIn.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
 
