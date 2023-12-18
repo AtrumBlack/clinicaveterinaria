@@ -8,9 +8,9 @@ public interface IClienteServicio {
 
     public void guardarCliente(Cliente cliente);
 
-    public void bajaLogica(Integer dni);
+    public void borrarCliente(Integer dni);//el metodo de borrado lo hace logico -- uso el sistema trigger
 
-    public void altaLogica(Integer dni);
+    public void restablecerCliente(Integer dni);
 
 //    public Cliente buscarListaClientexDni(Integer dni);
 //    public Cliente obtenerClientexId(Integer idCliente);

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 @Entity
@@ -13,18 +14,29 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name="reservas")
-public class Reserva {
+@Table(name="reserva")
+public class Reserva implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reserva")
     private Integer idReserva;
+
     @ManyToOne
-    @JoinColumn(name = "idCliente")
-    private Cliente idCliente;
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+
     @ManyToOne
-    @JoinColumn(name = "idMascota")
-    private Mascota idMascota;
-    private LocalTime horario;
-    private Boolean estado;
-    private LocalDate fecha;
+    @JoinColumn(name = "id_mascota")
+    private Mascota mascota;
+
+    @Temporal(TemporalType.TIME)
+    @Column(name = "hora_reserva", nullable = false)
+    private LocalTime horarioReserva;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_reserva", nullable = false)
+    private LocalDate fechaReserva;
+
+    @Column(name = "activo", nullable = false)
+    private Boolean activo; // Estado de la mascota (activo o inactivo)
 }

@@ -19,38 +19,38 @@ public class TratamientoServicio implements ITratamientoServicio{
         tratamientoRepositorio.save(tratamiento);
     }
 
-    @Override
-    public void bajaLogica(Integer idTratamiento) {
-        Optional<Tratamiento> tratamientoOptional = tratamientoRepositorio.findById(idTratamiento);
-        tratamientoOptional.ifPresent(tratamiento -> {
-            tratamiento.setEstado(false);
-            tratamientoRepositorio.save(tratamiento);
-        });
-    }
+//    @Override
+//    public void bajaLogica(Integer idTratamiento) {
+//        Optional<Tratamiento> tratamientoOptional = tratamientoRepositorio.findById(idTratamiento);
+//        tratamientoOptional.ifPresent(tratamiento -> {
+//            tratamiento.setEstado(false);
+//            tratamientoRepositorio.save(tratamiento);
+//        });
+//    }
 
-    @Override
-    public void altaLogica(Integer idTratamiento) {
-        Optional<Tratamiento> tratamientoOptional = tratamientoRepositorio.findById(idTratamiento);
-        tratamientoOptional.ifPresent(tratamiento -> {
-            tratamiento.setEstado(true);
-            tratamientoRepositorio.save(tratamiento);
-        });
-    }
-
-    @Override
-    public Tratamiento buscarListaTratamientoxId(Integer idTratamiento) {
-        return tratamientoRepositorio.findById(idTratamiento).orElse(null);
-    }
-
-    @Override
-    public List<Tratamiento> listarTratamientoPorEstado(Boolean estado) {
-        return tratamientoRepositorio.findByEstado(estado);
-    }
-
-    @Override
-    public long contarTotalRegistros() {
-        return tratamientoRepositorio.count();
-    }
+//    @Override
+//    public void altaLogica(Integer idTratamiento) {
+//        Optional<Tratamiento> tratamientoOptional = tratamientoRepositorio.findById(idTratamiento);
+//        tratamientoOptional.ifPresent(tratamiento -> {
+//            tratamiento.setEstado(true);
+//            tratamientoRepositorio.save(tratamiento);
+//        });
+//    }
+//
+//    @Override
+//    public Tratamiento buscarListaTratamientoxId(Integer idTratamiento) {
+//        return tratamientoRepositorio.findById(idTratamiento).orElse(null);
+//    }
+//
+//    @Override
+//    public List<Tratamiento> listarTratamientoPorEstado(Boolean estado) {
+//        return tratamientoRepositorio.findByEstado(estado);
+//    }
+//
+//    @Override
+//    public long contarTotalRegistros() {
+//        return tratamientoRepositorio.count();
+//    }
 
 
 }

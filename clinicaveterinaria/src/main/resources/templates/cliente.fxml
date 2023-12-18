@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="538.0" prefWidth="734.0" style="-fx-background-color: FFFFFF;" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.ClienteControlador">
+   <children>
+      <TableView fx:id="clienteTabla" layoutX="340.0" layoutY="75.0" onMouseClicked="#cargarClienteFormulario" prefHeight="188.0" prefWidth="379.0">
+         <columns>
+            <TableColumn fx:id="idClienteColumna" prefWidth="23.5999755859375" text="ID" />
+            <TableColumn fx:id="apellidoColumna" prefWidth="102.0" text="Apellido" />
+            <TableColumn fx:id="nombreColumna" prefWidth="104.20001220703125" text="Nombre" />
+            <TableColumn fx:id="documentoColumna" prefWidth="139.80001831054688" text="Documento" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="7.0" layoutY="65.0" prefHeight="370.0" prefWidth="323.0" stylesheets="@dashboardDesign.css">
+         <children>
+            <TextField fx:id="documentoTexto" layoutX="9.0" layoutY="19.2" prefHeight="25.0" prefWidth="150.0" promptText="Documento *" styleClass="jfx-text-field" AnchorPane.topAnchor="19.2">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <TextField fx:id="apellidoTexto" layoutX="28.0" layoutY="76.0" promptText="Apellido *" />
+            <TextField fx:id="nombreTexto" layoutX="28.0" layoutY="108.0" promptText="Nombre *" />
+            <TextField fx:id="direccionTexto" layoutX="16.0" layoutY="181.0" promptText="Direccion *" />
+            <TextField fx:id="telefonoTexto" layoutX="16.0" layoutY="271.0" promptText="Telefono *" />
+            <TextField fx:id="emailTexto" layoutX="16.0" layoutY="227.0" promptText="Email *" />
+            <TextField fx:id="contactoTexto" layoutX="16.0" layoutY="330.0" promptText="Contacto *" />
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="62.0" prefWidth="734.0" style="-fx-background-color: #1976D2;">
+         <children>
+            <Text fill="WHITE" layoutX="137.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION DE CLIENTES" wrappingWidth="472.669921875">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="380.0" layoutY="276.0" prefHeight="46.0" prefWidth="339.0" style="-fx-background-color: #1976D2;">
+         <children>
+            <Text fill="WHITE" layoutX="95.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MASCOTAS" wrappingWidth="149.60000000000002">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TableView fx:id="mascotaTabla" layoutX="379.0" layoutY="317.0" prefHeight="88.0" prefWidth="339.0">
+        <columns>
+          <TableColumn prefWidth="21.60003662109375" text="ID" />
+          <TableColumn prefWidth="170.4000244140625" text="Alias" />
+            <TableColumn prefWidth="136.79998779296875" text="Especie" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutY="465.0" prefHeight="38.0" prefWidth="734.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXButton fx:id="agregarBoton" layoutX="28.0" layoutY="-1.0" onAction="#agregarCliente" style="-fx-border-radius: 5px; -fx-border-color: #1d3557;" text="Agregar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="modificarBoton" buttonType="RAISED" layoutX="111.0" layoutY="-1.0" onAction="#modificarCliente" style="-fx-border-radius: 5px; -fx-border-color: #1d3557; -jfx-button-type: blue;" text="Modificar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="eliminarBoton" layoutX="232.0" onAction="#eliminarCliente" style="-fx-border-radius: 5px; -fx-border-color: red;" text="Eliminar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="agregarMascotaBoton" layoutX="369.0" layoutY="-1.0" onAction="#agregarMascota" style="-fx-border-radius: 5px; -fx-border-color: #1976D2;" text="Agregar Mascota">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="limpiarBoton" layoutX="569.0" onAction="#limpiarFormulario" style="-fx-border-radius: 5px; -fx-border-color: #ffd60a;" text="Limpiar el Formulario">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

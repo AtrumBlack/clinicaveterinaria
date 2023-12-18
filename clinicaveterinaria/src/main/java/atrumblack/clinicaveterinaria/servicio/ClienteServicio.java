@@ -20,26 +20,36 @@ public class ClienteServicio implements IClienteServicio{
     }
 
     @Override
-    public void bajaLogica(Integer dni) {
-        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
-        clienteOptional.ifPresent(cliente -> {
-            if (cliente.getEstado()) { // Si el cliente está activo
-                cliente.setEstado(false);
-                clienteRepositorio.save(cliente);
-            }
-        });
+    public void borrarCliente(Integer dni) {
+
     }
 
     @Override
-    public void altaLogica(Integer dni) {
-        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
-        clienteOptional.ifPresent(cliente -> {
-            if (!cliente.getEstado()) { // Si el cliente está inactivo
-                cliente.setEstado(true);
-                clienteRepositorio.save(cliente);
-            }
-        });
+    public void restablecerCliente(Integer dni) {
+
     }
+
+//    @Override
+//    public void bajaLogica(Integer dni) {
+//        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
+//        clienteOptional.ifPresent(cliente -> {
+//            if (cliente.getEstado()) { // Si el cliente está activo
+//                cliente.setEstado(false);
+//                clienteRepositorio.save(cliente);
+//            }
+//        });
+//    }
+
+//    @Override
+//    public void altaLogica(Integer dni) {
+//        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
+//        clienteOptional.ifPresent(cliente -> {
+//            if (!cliente.getEstado()) { // Si el cliente está inactivo
+//                cliente.setEstado(true);
+//                clienteRepositorio.save(cliente);
+//            }
+//        });
+//    }
 //
 //    @Override
 //    public Cliente buscarListaClientexDni(Integer dni) {

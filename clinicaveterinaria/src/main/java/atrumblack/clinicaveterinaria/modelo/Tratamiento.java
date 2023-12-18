@@ -6,19 +6,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name="tratamientos")
-public class Tratamiento {
+@Table(name="tratamiento")
+public class Tratamiento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // Atributos privados que representan las propiedades de un tratamiento
+    @Column(name = "id_tratamiento")
     private Integer idTratamiento; // Identificador único del tratamiento
+
+    @Column(name = "tipo", nullable = false, length = 50)
     private String tipo; // Tipo de tratamiento (por ejemplo, cirugía, vacunación, etc.)
+
+    @ManyToOne
+    @JoinColumn(name = "id_historial_medico")
+    private HistorialMedico historialMedico;
+
+    @Column(name = "descripcion", nullable = false, length = 200)
     private String descripcion; // Descripción detallada del tratamiento
-    private Double importe; // Costo del tratamiento
-    private Boolean estado; // Estado del tratamiento (activo o inactivo)
+
+    @Column(name = "importe_tratamiento", nullable = false, precision = 5, scale = 2)
+    private BigDecimal importeTratamiento; // Costo del tratamiento
+
+    @Column(name = "activo", nullable = false)
+    private Boolean activo; // Estado de la mascota (activo o inactivo)
 }

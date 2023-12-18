@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.VeteMainControlador">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="250.0" layoutY="148.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="70.0" prefWidth="200.0" styleClass="shadow" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="107.0" layoutY="1.0" prefHeight="50.0" prefWidth="1100.0" styleClass="top-form" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="11.0">
+                                 <image>
+                                    <Image url="@../images/HuellaG.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="57.0" layoutY="9.0" prefHeight="35.0" text="Clinica Veterinaria" textFill="#3cb0b4">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="19.2" layoutY="14.0" prefHeight="596.0" prefWidth="189.0" styleClass="nav-form" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <JFXButton fx:id="main_btn_mascota" layoutX="13.0" layoutY="128.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Mascota" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-mascotas-80.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_tratamiento" layoutX="13.0" layoutY="188.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Tratamiento" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-tratamiento-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_visita" layoutX="13.0" layoutY="248.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Visita" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-visita-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_historia_clinica" layoutX="13.0" layoutY="308.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Historia Clinica" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-historial-médico-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_inicio" layoutX="13.0" layoutY="9.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Inicio" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-página-principal-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_cliente" layoutX="13.0" layoutY="68.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Cliente" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-multitud-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_reserva_turno" layoutX="13.0" layoutY="366.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Reservas de Turno" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-appointments-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_salir" layoutX="1.0" layoutY="511.0" onAction="#logout" prefHeight="40.0" prefWidth="175.0" text="Cerrar Sesión" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
+                                       <image>
+                                          <Image url="@../images/icons8-salida-26.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="izquierda-btn" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton fx:id="main_btn_facturacion" layoutX="13.0" layoutY="423.0" onAction="#switchForm" prefHeight="40.0" prefWidth="175.0" styleClass="izquierda-btn" text="Facturacion" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-facturación-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Line endX="72.99998474121094" endY="-3.0517578125E-5" layoutX="105.0" layoutY="491.0" startX="-100.0" stroke="WHITE" />
+                           </children>
+                           <effect>
+                              <Lighting bumpInput="$null">
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="cliente_form" layoutX="-0.8" layoutY="-7.2" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="11.0" layoutY="310.0" text="Documento:" />
+                                    <TextField fx:id="cliente_text_documento" layoutX="86.0" layoutY="298.0" promptText="Documento" styleClass="jfx-text-field" />
+                                    <Label layoutX="28.0" layoutY="346.0" text="Apellido:" />
+                                    <TextField fx:id="cliente_text_apellido" layoutX="85.0" layoutY="334.0" promptText="Apellido" styleClass="jfx-text-field" />
+                                    <Label layoutX="28.0" layoutY="382.0" text="Nombre:" />
+                                    <TextField fx:id="cliente_text_nombre" layoutX="85.0" layoutY="370.0" promptText="Nombre" styleClass="jfx-text-field" />
+                                    <Label layoutX="22.0" layoutY="418.0" text="Direccion:" />
+                                    <TextField fx:id="cliente_text_direccion" layoutX="85.0" layoutY="406.0" promptText="Direccion" styleClass="jfx-text-field" />
+                                    <Label layoutX="26.0" layoutY="454.0" text="Telefono:" />
+                                    <TextField fx:id="cliente_text_telefono" layoutX="84.0" layoutY="442.0" promptText="Telefono" styleClass="jfx-text-field" />
+                                    <Label layoutX="43.0" layoutY="490.0" text="Email:" />
+                                    <TextField fx:id="cliente_text_email" layoutX="84.0" layoutY="478.0" promptText="Email" styleClass="jfx-text-field" />
+                                    <Label layoutX="24.0" layoutY="526.0" text="Contacto:" />
+                                    <TextField fx:id="cliente_text_contacto" layoutX="84.0" layoutY="514.0" promptText="Contacto" styleClass="jfx-text-field" />
+                                    <AnchorPane layoutX="335.0" layoutY="310.0" prefHeight="187.0" prefWidth="583.0" AnchorPane.rightAnchor="10.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <TextField fx:id="cliente_text_especie_mascota" layoutX="69.0" layoutY="51.0" promptText="Especie" styleClass="jfx-text-field" />
+                                          <Label layoutX="18.0" layoutY="62.0" text="Especie:" />
+                                          <TextField fx:id="cliente_text_alias_mascota" layoutX="69.0" layoutY="20.0" promptText="Alias" styleClass="jfx-text-field" />
+                                          <Label layoutX="32.0" layoutY="31.0" text="Alias:" />
+                                          <TableView fx:id="cliente_tabla_Mascota" layoutX="14.0" layoutY="26.0" prefHeight="150.0" prefWidth="306.0" AnchorPane.rightAnchor="11.0">
+                                            <columns>
+                                              <TableColumn fx:id="cliente_col_id_mascota" prefWidth="29.600037574768066" text="Id" />
+                                              <TableColumn fx:id="cliente_col_alias_mascota" prefWidth="120.79998397827148" text="Alias" />
+                                                <TableColumn fx:id="cliente_col_especie_mascota" prefWidth="152.00001525878906" text="Especie" />
+                                            </columns>
+                                          </TableView>
+                                          <Label alignment="CENTER" layoutX="451.0" layoutY="4.0" prefHeight="20.0" prefWidth="97.0" styleClass="label-mascota" text="Mascota" />
+                                          <JFXButton fx:id="cliente_btn_agregar_mascota" layoutX="65.0" layoutY="103.0" prefHeight="34.0" prefWidth="121.0" styleClass="add-btn" text="Agregar" />
+                                          <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="69.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-añadir-50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <JFXButton fx:id="cliente_btn_agregar" layoutX="305.0" layoutY="508.0" prefHeight="34.0" prefWidth="90.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="cliente_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-editar-propiedad-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="cliente_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="cliente_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-basura-llena-24.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="282.0" prefWidth="852.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="cliente_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="cliente_tabla" layoutX="10.0" layoutY="62.0" prefHeight="200.0" prefWidth="829.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                      <columns>
+                                        <TableColumn fx:id="cliente_col_id" prefWidth="31.999984741210938" resizable="false" text="Id" />
+                                        <TableColumn fx:id="cliente_col_documento" text="Documento" />
+                                          <TableColumn fx:id="cliente_col_apellido" prefWidth="128.79995727539062" text="Apellido" />
+                                          <TableColumn fx:id="cliente_col_nombre" prefWidth="116.7999267578125" text="Nombre" />
+                                          <TableColumn fx:id="cliente_col_direccion" prefWidth="128.79998779296875" text="Direccion" />
+                                          <TableColumn fx:id="cliente_col_telefono" prefWidth="78.39996337890625" text="Telefono" />
+                                          <TableColumn fx:id="cliente_col_email" prefWidth="92.800048828125" text="Email" />
+                                          <TableColumn fx:id="cliente_col_contacto" prefWidth="170.39998779296877" text="Contacto" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="800.0" layoutY="-28.0" text="Cliente" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="mascota_form" layoutX="10.0" layoutY="10.0" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="51.0" layoutY="352.1999999999999" text="Alias:" AnchorPane.bottomAnchor="179.8" />
+                                    <TextField fx:id="mascota_text_alias" layoutX="89.0" layoutY="338.19999999999993" promptText="Alias" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" />
+                                    <Label layoutX="33.0" layoutY="399.0" text="Especie:" AnchorPane.topAnchor="399.0" />
+                                    <TextField fx:id="mascota_text_especie" layoutX="86.0" layoutY="385.4" promptText="Especie" styleClass="jfx-text-field" AnchorPane.topAnchor="385.4" />
+                                    <Label layoutX="252.0" layoutY="351.0" text="Color de Pelo:" AnchorPane.bottomAnchor="182.99999999999991" />
+                                    <TextField fx:id="mascota_text_color_de_pelo" layoutX="336.0" layoutY="335.19999999999993" promptText="Color de Pelo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" />
+                                    <Label layoutX="299.0" layoutY="399.0" text="Sexo:" AnchorPane.topAnchor="399.0" />
+                                    <TextField fx:id="mascota_text_sexo" layoutX="337.0" layoutY="385.4" promptText="Sexo" styleClass="jfx-text-field" AnchorPane.topAnchor="385.4" />
+                                    <Label layoutX="536.0" layoutY="352.1999999999999" text="Fecha de Nacimiento:" AnchorPane.bottomAnchor="179.8" />
+                                    <Label layoutX="10.0" layoutY="444.0" text="Peso Actual:" AnchorPane.topAnchor="450.0" />
+                                    <TextField fx:id="mascota_text_peso_actual" layoutX="85.0" layoutY="436.0" promptText="Peso Actual" styleClass="jfx-text-field" AnchorPane.topAnchor="436.0" />
+                                    <Label layoutX="245.0" layoutY="450.0" text="Peso Promedio:" AnchorPane.topAnchor="450.0" />
+                                    <TextField fx:id="mascota_text_peso_promedio" layoutX="338.0" layoutY="436.0" promptText="Peso Promedio" styleClass="jfx-text-field" AnchorPane.topAnchor="436.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="mascota_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-editar-propiedad-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="mascota_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="mascota_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-basura-llena-24.png" />
+                                       </image>
+                                    </ImageView>
+                                    <DatePicker fx:id="mascota_text_fecha_nacimiento" editable="false" layoutX="656.0" layoutY="348.0" promptText="Fecha de Nacimiento" styleClass="date-picker" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="852.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="mascota_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="mascota_tabla" layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="831.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="mascota_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                          <TableColumn fx:id="mascota_col_alias" prefWidth="94.39999771118164" text="Alias" />
+                                          <TableColumn fx:id="mascota_col_cliente" prefWidth="195.9999542236328" text="Cliente" />
+                                          <TableColumn fx:id="mascota_col_especie" prefWidth="55.20001220703125" text="Especie" />
+                                          <TableColumn fx:id="mascota_col_color_de_pelo" prefWidth="86.39996337890625" text="Color de Pelo" />
+                                          <TableColumn fx:id="mascota_col_fecha_nacimiento" prefWidth="134.39996337890625" text="Fecha de Naciemiento" />
+                                          <TableColumn fx:id="mascota_col_peso_actual" prefWidth="77.60003662109375" text="Peso Actual" />
+                                          <TableColumn fx:id="mascota_col_peso_promedio" prefWidth="92.800048828125" text="Peso Promedio" />
+                                          <TableColumn fx:id="mascota_col_sexo" prefWidth="76.79998779296875" text="Sexo" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="800.0" layoutY="-30.0" text="Mascota" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="tratamiento_form" layoutX="20.0" layoutY="20.0" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="51.0" layoutY="352.1999999999999" text="Tipo:" AnchorPane.bottomAnchor="179.8" />
+                                    <TextField fx:id="tratamiento_text_tipo" layoutX="89.0" layoutY="338.19999999999993" promptText="Tipo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" />
+                                    <Label layoutX="33.0" layoutY="399.0" text="Importe Tratamiento:" AnchorPane.topAnchor="399.0" />
+                                    <TextField fx:id="tratamiento_tex_importe" layoutX="154.0" layoutY="385.6" promptText="Importe Tratamiento" styleClass="jfx-text-field" AnchorPane.topAnchor="385.6" />
+                                    <Label layoutX="252.0" layoutY="351.0" text="Descripcion:" AnchorPane.bottomAnchor="182.99999999999991" />
+                                    <TextField fx:id="tratamiento_tex_descripcion" layoutX="336.0" layoutY="335.19999999999993" prefHeight="26.0" prefWidth="515.0" promptText="Descripcion" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="tratamiento_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-editar-propiedad-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="tratamiento_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="tratamiento_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-basura-llena-24.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="tratamiento_btn_agregar" layoutX="304.0" layoutY="509.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="308.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="852.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="tratamiento_txt_buscar" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="831.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.0">
+                                       <columns>
+                                          <TableColumn fx:id="tratamiento_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                          <TableColumn fx:id="tratamiento_col_tipo" prefWidth="134.39999771118164" text="Tipo" />
+                                          <TableColumn fx:id="tratamiento_col_descripcion" prefWidth="516.7999725341797" text="Descripcion" />
+                                          <TableColumn fx:id="tratamiento_col_importe" prefWidth="158.39999999999998" text="Importe Tratamiento" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="770.0" layoutY="-29.0" text="Tratamiento" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="visitas_form" layoutX="20.0" layoutY="20.0" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="51.0" layoutY="352.1999999999999" text="Alias:" AnchorPane.bottomAnchor="179.8" AnchorPane.topAnchor="352.0" />
+                                    <TextField fx:id="visitas_text_alias" layoutX="89.0" layoutY="338.19999999999993" promptText="Alias" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" AnchorPane.topAnchor="333.0" />
+                                    <Label layoutX="9.0" layoutY="399.2" text="Detalles Sintomas:" AnchorPane.topAnchor="399.2" />
+                                    <TextField fx:id="visitas_text_destalles_sintomas" layoutX="116.0" layoutY="387.2" prefHeight="26.0" prefWidth="665.0" promptText="Detalles Sintomas:" styleClass="jfx-text-field" AnchorPane.topAnchor="387.0" />
+                                    <Label layoutX="287.0" layoutY="348.7999999999999" text="Cliente:" AnchorPane.bottomAnchor="183.2" AnchorPane.topAnchor="352.0" />
+                                    <TextField fx:id="visitas_text_cliente" layoutX="336.0" layoutY="335.19999999999993" promptText="Cliente" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" AnchorPane.topAnchor="333.0" />
+                                    <Label layoutX="10.0" layoutY="444.0" text="Peso Actual:" AnchorPane.topAnchor="450.0" />
+                                    <TextField fx:id="visitas_text_peso_actual" layoutX="85.0" layoutY="436.0" promptText="Peso Actual" styleClass="jfx-text-field" AnchorPane.topAnchor="436.0" />
+                                    <Label layoutX="535.0" layoutY="347.4" text="Importe Toral:" AnchorPane.topAnchor="352.0" />
+                                    <TextField fx:id="visitas_text_importe" layoutX="628.0" layoutY="333.0" promptText="Importe Total" styleClass="jfx-text-field" AnchorPane.topAnchor="333.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="visitas_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-editar-propiedad-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="visitas_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="visitas_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-basura-llena-24.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="visitas_btn_agregar" layoutX="312.0" layoutY="512.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="316.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="852.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="visitas_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar - alias" styleClass="search">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="visitas_tabla_mascota" layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="368.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="473.0">
+                                       <columns>
+                                          <TableColumn fx:id="visitas_col_id_mascota" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                          <TableColumn fx:id="visitas_col_alias" prefWidth="94.39999771118164" text="Alias" />
+                                          <TableColumn fx:id="visitas_col_cliente" prefWidth="195.9999542236328" text="Cliente" />
+                                          <TableColumn fx:id="visitas_col_especie" prefWidth="55.20001220703125" text="Especie" />
+                                       </columns>
+                                    </TableView>
+                                    <AnchorPane layoutX="426.0" layoutY="18.0" prefHeight="284.0" prefWidth="404.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView fx:id="visitas_tabla_tratamiento" layoutX="14.0" layoutY="59.0" prefHeight="177.0" prefWidth="382.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0">
+                                             <columns>
+                                                <TableColumn fx:id="visitas_col_id_tratamiento" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                                <TableColumn fx:id="visitas_col_tipo" prefWidth="83.199951171875" text="Tipo" />
+                                                <TableColumn fx:id="visitas_col_descripcion" prefWidth="274.4000610351562" text="Descripcion" />
+                                             </columns>
+                                          </TableView>
+                                          <Label layoutX="249.0" layoutY="35.0" styleClass="shadow" text="Tratamiento a Realizar" />
+                                          <TextField layoutX="14.0" layoutY="8.0" prefWidth="199.0" promptText="Buscar - tipos de tratamientos" styleClass="search-vista-tratamiento">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="17.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-búsqueda-52.png" />
+                                             </image>
+                                          </ImageView>
+                                          <JFXButton fx:id="visitas_btn_agregar_tratamiento" layoutX="46.0" layoutY="244.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="8.0" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="50.0" layoutY="247.79999999999998" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.0">
+                                             <image>
+                                                <Image url="@../images/icons8-añadir-50.png" />
+                                             </image>
+                                          </ImageView>
+                                          <JFXButton fx:id="visitas_btn_eliminar_tratamiento" layoutX="271.0" layoutY="245.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="8.0" />
+                                          <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="275.0" layoutY="247.79999999999998" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.0">
+                                             <image>
+                                                <Image url="@../images/icons8-basura-llena-24.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="828.0" layoutY="-4.0" text="Visitas" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="historia_clinica_form" layoutX="28.0" layoutY="7.0" prefHeight="609.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="15.0" prefHeight="571.0" prefWidth="838.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="505.0" layoutY="232.4" prefHeight="318.0" prefWidth="374.0" AnchorPane.topAnchor="232.4">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="4.8" layoutY="26.2" prefHeight="300.0" prefWidth="365.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="4.8" AnchorPane.rightAnchor="4.800000000000011" AnchorPane.topAnchor="26.2">
+                                             <children>
+                                                <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="54.6" layoutY="4.0" prefHeight="19.0" prefWidth="122.0" styleClass="label-info" text="Historial de Visitas" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="historia_clinica_combo_vistas" focusColor="#272b3f" layoutX="15.2" layoutY="28.0" prefHeight="26.0" prefWidth="231.0" promptText="Historial de Visitas" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                                <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="107.0" layoutY="76.0" prefHeight="19.0" prefWidth="162.0" styleClass="label-info" text="Historial de Tratamientos" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="historia_clinica_combo_tratamiento" focusColor="#272b3f" layoutX="84.0" layoutY="100.0" prefHeight="26.0" prefWidth="231.0" promptText="Historial de Tratamientos" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                                <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="125.0" layoutY="149.0" prefHeight="19.0" prefWidth="122.0" styleClass="label-info" text="Vacunas Aplicadas" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="historia_clinica_combo_vacuna" focusColor="#272b3f" layoutX="85.0" layoutY="173.0" prefHeight="26.0" prefWidth="231.0" promptText="Vacunas Aplicadas" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                                <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="117.0" layoutY="221.0" prefHeight="19.0" prefWidth="138.0" styleClass="label-info" text="Información General" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="historia_clinica_combo_informacion_general" focusColor="#272b3f" layoutX="77.0" layoutY="245.0" prefHeight="26.0" prefWidth="231.0" promptText="Información General" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <TextField fx:id="historia_clinica_text_buscar_alias" layoutX="507.0" layoutY="9.0" prefWidth="374.0" promptText="Buscar - alias" styleClass="search" AnchorPane.topAnchor="9.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="512.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="historia_clinica_tabla_mascota" layoutX="504.0" layoutY="67.0" prefHeight="158.0" prefWidth="375.0" styleClass="label">
+                                      <columns>
+                                        <TableColumn fx:id="historia_clinica_col_id_mascota" prefWidth="29.5999755859375" text="Id" />
+                                        <TableColumn fx:id="historia_clinica_col_alias_mascota" prefWidth="112.00006103515625" text="Alias" />
+                                          <TableColumn fx:id="historia_clinica_col_cliente_mascota" prefWidth="231.99998779296874" text="Cliente" />
+                                      </columns>
+                                    </TableView>
+                                    <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="568.0" prefWidth="472.0" AnchorPane.bottomAnchor="23.0" AnchorPane.topAnchor="9.0">
+                                       <children>
+                                          <TableView fx:id="historia_clinica_tabla" layoutX="22.0" layoutY="20.0" prefHeight="522.0" prefWidth="430.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                             <columns>
+                                                <TableColumn fx:id="historia_clinica_col_id" prefWidth="75.0" text="Id" />
+                                                <TableColumn fx:id="historia_clinica_col_alias" prefWidth="75.0" text="Alias" />
+                                                <TableColumn fx:id="historia_clinica_col_cliente" prefWidth="75.0" text="Cliente" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="768.0" layoutY="-21.0" text="Historia Clinica" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="turnos_form" layoutX="30.0" layoutY="30.0" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="turnos_btn_limpiar" layoutX="693.0" layoutY="509.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="6.199999999999932" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="696.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.599999999999909">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="471.0" prefWidth="838.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="740.0" layoutY="-29.0" text="Reserva de Turnos" />
+                                    <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="449.0" prefWidth="392.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <DatePicker fx:id="turnos_date_fecha_reserva" layoutX="9.0" layoutY="22.0" prefHeight="29.0" prefWidth="364.0" styleClass="date-picker-popup" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
+                                          <AnchorPane layoutX="14.0" layoutY="153.0" prefHeight="282.0" prefWidth="362.0">
+                                             <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                             <children>
+                                                <JFXButton fx:id="turnos_btn_8" layoutX="29.0" layoutY="10.0" styleClass="jfx-button2" text="08:00 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_830" layoutX="132.59999999999997" layoutY="10.0" styleClass="jfx-button2" text="08:30 hs" AnchorPane.rightAnchor="135.0" />
+                                                <JFXButton fx:id="turnos_btn_9" layoutX="240.0" layoutY="10.0" styleClass="jfx-button2" text="09:00 hs" AnchorPane.rightAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_930" layoutX="28.0" layoutY="56.0" styleClass="jfx-button2" text="09:30 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_10" layoutX="134.0" layoutY="56.0" styleClass="jfx-button2" text="10:00 hs" AnchorPane.rightAnchor="135.0" />
+                                                <JFXButton fx:id="turnos_btn_1030" layoutX="239.0" layoutY="56.0" styleClass="jfx-button2" text="10:30 hs" AnchorPane.rightAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_11" layoutX="29.0" layoutY="103.0" styleClass="jfx-button2" text="11:00 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_1130" layoutX="135.0" layoutY="103.0" styleClass="jfx-button2" text="11:30 hs" AnchorPane.rightAnchor="135.0" />
+                                                <JFXButton fx:id="turnos_btn_12" layoutX="240.0" layoutY="103.0" styleClass="jfx-button2" text="12:00 hs" AnchorPane.rightAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_1230" layoutX="28.0" layoutY="149.0" styleClass="jfx-button2" text="12:30 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_13" layoutX="134.0" layoutY="149.0" styleClass="jfx-button2" text="13:00 hs" AnchorPane.rightAnchor="135.0" />
+                                                <JFXButton fx:id="turnos_btn_1330" layoutX="239.0" layoutY="149.0" styleClass="jfx-button2" text="13:30 hs" AnchorPane.rightAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_14" layoutX="28.0" layoutY="193.0" styleClass="jfx-button2" text="14:00 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_1430" layoutX="134.0" layoutY="193.0" styleClass="jfx-button2" text="14:30 hs" AnchorPane.rightAnchor="135.0" />
+                                                <JFXButton fx:id="turnos_btn_15" layoutX="239.0" layoutY="193.0" styleClass="jfx-button2" text="15:00 hs" AnchorPane.rightAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_1530" layoutX="27.0" layoutY="239.0" styleClass="jfx-button2" text="15:30 hs" AnchorPane.leftAnchor="29.0" />
+                                                <JFXButton fx:id="turnos_btn_16" layoutX="133.0" layoutY="239.0" styleClass="jfx-button2" text="16:00 hs" AnchorPane.rightAnchor="135.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="418.0" layoutY="10.0" prefHeight="450.0" prefWidth="421.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="64.0" layoutY="55.0" text="Alias:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="54.0" layoutY="125.0" text="Cliente:" />
+                                          <TextField fx:id="turnos_text_cliente" layoutX="117.0" layoutY="111.0" prefHeight="26.0" prefWidth="274.0" promptText="Cliente" styleClass="jfx-text-field" AnchorPane.leftAnchor="117.0" />
+                                          <Accordion layoutX="54.0" layoutY="55.0" />
+                                          <TableView fx:id="turnos_tabla_mascota" layoutX="28.0" layoutY="156.0" prefHeight="200.0" prefWidth="356.0">
+                                            <columns>
+                                              <TableColumn fx:id="turnos_col_id" prefWidth="75.0" text="Id" />
+                                              <TableColumn fx:id="turnos_col_alias" prefWidth="97.5999755859375" text="Alias" />
+                                                <TableColumn fx:id="turnos_col_cliente" prefWidth="182.39996337890625" text="Cliente" />
+                                            </columns>
+                                          </TableView>
+                                          <JFXButton fx:id="turnos_btn_agregar" layoutX="14.0" layoutY="390.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="26.0" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-añadir-50.png" />
+                                             </image>
+                                          </ImageView>
+                                          <JFXButton fx:id="turnos_btn_modificar" layoutX="130.0" layoutY="389.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="27.0" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="134.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.399999999999977">
+                                             <image>
+                                                <Image url="@../images/icons8-editar-propiedad-50.png" />
+                                             </image>
+                                          </ImageView>
+                                          <JFXButton fx:id="turnos_btn_eliminar" layoutX="312.0" layoutY="388.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="28.0" />
+                                          <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="316.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="33.39999999999998">
+                                             <image>
+                                                <Image url="@../images/icons8-basura-llena-24.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextField fx:id="turnos_text_buscar_alias" layoutX="110.0" layoutY="41.0" promptText="Buscar - Alias" styleClass="search">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="113.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons8-búsqueda-52.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="factura_form" layoutX="30.0" layoutY="30.0" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                           <effect>
+                              <Shadow>
+                                 <color>
+                                    <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="15.2" layoutY="-13.6" prefHeight="582.0" prefWidth="870.0" styleClass="white-bg" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="-14.0">
+                                 <children>
+                                    <AnchorPane layoutX="49.0" layoutY="171.0" prefHeight="92.0" prefWidth="770.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="10.0" layoutY="21.0" text="Apellido, Nombre:" />
+                                          <TextField fx:id="factura_text_cliente" layoutX="116.0" layoutY="9.0" prefHeight="26.0" prefWidth="352.0" promptText="Apellido, Nombre" styleClass="jfx-text-field" />
+                                          <Label layoutX="53.0" layoutY="56.0" text="Direccion:" />
+                                          <TextField fx:id="factura_text_direccion" layoutX="116.0" layoutY="44.0" prefHeight="26.0" prefWidth="352.0" promptText="Direccion" styleClass="jfx-text-field" />
+                                          <Label layoutX="516.0" layoutY="19.0" text="Telefono:" />
+                                          <TextField fx:id="factura_text_telefono" layoutX="574.0" layoutY="7.0" promptText="Telefono" styleClass="jfx-text-field" />
+                                          <Label layoutX="536.0" layoutY="52.0" text="Email:" />
+                                          <TextField fx:id="factura_text_email" layoutX="582.0" layoutY="40.0" promptText="Email" styleClass="jfx-text-field" />
+                                       </children>
+                                    </AnchorPane>
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+                                       <image>
+                                          <Image url="@../images/icons8-añadir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="factura_btn_efectivo" layoutX="124.0" layoutY="540.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Efectivo" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="128.0" layoutY="542.2" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.399999999999977">
+                                       <image>
+                                          <Image url="@../images/icons8-efectivo-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="factura_btn_limpiar" layoutX="411.0" layoutY="538.0" prefHeight="34.0" prefWidth="164.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="414.0" layoutY="545.4" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.200000000000045">
+                                       <image>
+                                          <Image url="@../images/icons8-clean-up-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="factura_btn_tarjeta" layoutX="241.0" layoutY="540.0" prefHeight="34.0" prefWidth="154.0" styleClass="delete-btn" text="Tarjeta de Credito" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="244.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.600000000000023">
+                                       <image>
+                                          <Image url="@../images/icons8-tarjeta-en-uso-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton fx:id="factura_btn_agregar" layoutX="12.0" layoutY="540.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Imprimir" AnchorPane.bottomAnchor="7.0" />
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-imprimir-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="factura_tabla" layoutX="44.0" layoutY="281.0" prefHeight="210.0" prefWidth="775.0" styleClass="new-table-view">
+                                       <columns>
+                                          <TableColumn fx:id="factura_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                          <TableColumn fx:id="factura_col_concepto" prefWidth="499.1999969482422" text="Concepto" />
+                                          <TableColumn fx:id="factura_col_cantidad" prefWidth="38.4000244140625" text="Cant" />
+                                          <TableColumn fx:id="factura_col_precio_unitario" prefWidth="108.79998779296875" text="Precio Unit" />
+                                          <TableColumn fx:id="factura_col_importe" prefWidth="108.7999267578125" text="Importe" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="610.0" layoutY="514.0" text="Total" />
+                                    <TextField fx:id="factura_text_importe_total" layoutX="656.0" layoutY="502.0" promptText="Email" styleClass="jfx-text-field" text="total" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="118.0" prefWidth="852.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="factura_text_buscar_alias" layoutX="6.0" layoutY="9.0" prefWidth="220.0" promptText="Buscar - alias" styleClass="search">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="9.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-búsqueda-52.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="factura_tabla_mascota" layoutX="235.2" layoutY="7.0" prefHeight="102.0" prefWidth="604.0" styleClass="new-table-view" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="13.0">
+                                       <columns>
+                                          <TableColumn fx:id="factura_col_id_mascota" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                                          <TableColumn fx:id="factura_col_alias" prefWidth="92.79999160766602" text="Alias" />
+                                          <TableColumn fx:id="factura_col_cliente" prefWidth="213.6000213623047" text="Cliente" />
+                                          <TableColumn fx:id="factura_col_especie" prefWidth="141.59991455078125" text="Especie" />
+                                          <TableColumn fx:id="factura_col_fecha_visita" prefWidth="132.79998779296875" text="Fecha Visita" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="828.0" layoutY="-38.0" text="Factura" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
