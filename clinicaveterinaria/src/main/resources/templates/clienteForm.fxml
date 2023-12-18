@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cliente_form" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.ClienteFormControlador">
+   <effect>
+      <Shadow>
+         <color>
+            <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+         </color>
+      </Shadow>
+   </effect>
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label layoutX="11.0" layoutY="310.0" text="Documento:" />
+            <TextField fx:id="cliente_text_documento" layoutX="86.0" layoutY="298.0" promptText="Documento" styleClass="jfx-text-field" />
+            <Label layoutX="28.0" layoutY="346.0" text="Apellido:" />
+            <TextField fx:id="cliente_text_apellido" layoutX="85.0" layoutY="334.0" promptText="Apellido" styleClass="jfx-text-field" />
+            <Label layoutX="28.0" layoutY="382.0" text="Nombre:" />
+            <TextField fx:id="cliente_text_nombre" layoutX="85.0" layoutY="370.0" promptText="Nombre" styleClass="jfx-text-field" />
+            <Label layoutX="22.0" layoutY="418.0" text="Direccion:" />
+            <TextField fx:id="cliente_text_direccion" layoutX="85.0" layoutY="406.0" promptText="Direccion" styleClass="jfx-text-field" />
+            <Label layoutX="26.0" layoutY="454.0" text="Telefono:" />
+            <TextField fx:id="cliente_text_telefono" layoutX="84.0" layoutY="442.0" promptText="Telefono" styleClass="jfx-text-field" />
+            <Label layoutX="43.0" layoutY="490.0" text="Email:" />
+            <TextField fx:id="cliente_text_email" layoutX="84.0" layoutY="478.0" promptText="Email" styleClass="jfx-text-field" />
+            <Label layoutX="24.0" layoutY="526.0" text="Contacto:" />
+            <TextField fx:id="cliente_text_contacto" layoutX="84.0" layoutY="514.0" promptText="Contacto" styleClass="jfx-text-field" />
+            <AnchorPane layoutX="335.0" layoutY="310.0" prefHeight="187.0" prefWidth="583.0" AnchorPane.rightAnchor="10.0">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <TextField fx:id="cliente_text_especie_mascota" layoutX="69.0" layoutY="51.0" promptText="Especie" styleClass="jfx-text-field" />
+                  <Label layoutX="18.0" layoutY="62.0" text="Especie:" />
+                  <TextField fx:id="cliente_text_alias_mascota" layoutX="69.0" layoutY="20.0" promptText="Alias" styleClass="jfx-text-field" />
+                  <Label layoutX="32.0" layoutY="31.0" text="Alias:" />
+                  <TableView fx:id="cliente_tabla_Mascota" layoutX="14.0" layoutY="26.0" prefHeight="150.0" prefWidth="306.0" AnchorPane.rightAnchor="11.0">
+                     <columns>
+                        <TableColumn fx:id="cliente_col_id_mascota" prefWidth="29.600037574768066" text="Id" />
+                        <TableColumn fx:id="cliente_col_alias_mascota" prefWidth="120.79998397827148" text="Alias" />
+                        <TableColumn fx:id="cliente_col_especie_mascota" prefWidth="152.00001525878906" text="Especie" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" layoutX="451.0" layoutY="4.0" prefHeight="20.0" prefWidth="97.0" styleClass="label-mascota" text="Mascota" />
+                  <JFXButton fx:id="cliente_btn_agregar_mascota" layoutX="65.0" layoutY="103.0" prefHeight="34.0" prefWidth="121.0" styleClass="add-btn" text="Agregar" />
+                  <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="69.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-añadir-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="cliente_btn_agregar" layoutX="305.0" layoutY="508.0" prefHeight="34.0" prefWidth="90.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-añadir-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="cliente_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-editar-propiedad-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="cliente_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-clean-up-64.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="cliente_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-basura-llena-24.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="282.0" prefWidth="852.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <TextField fx:id="cliente_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-búsqueda-52.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="cliente_tabla" layoutX="10.0" layoutY="62.0" prefHeight="200.0" prefWidth="829.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <columns>
+                  <TableColumn fx:id="cliente_col_id" prefWidth="31.999984741210938" resizable="false" text="Id" />
+                  <TableColumn fx:id="cliente_col_documento" text="Documento" />
+                  <TableColumn fx:id="cliente_col_apellido" prefWidth="128.79995727539062" text="Apellido" />
+                  <TableColumn fx:id="cliente_col_nombre" prefWidth="116.7999267578125" text="Nombre" />
+                  <TableColumn fx:id="cliente_col_direccion" prefWidth="128.79998779296875" text="Direccion" />
+                  <TableColumn fx:id="cliente_col_telefono" prefWidth="78.39996337890625" text="Telefono" />
+                  <TableColumn fx:id="cliente_col_email" prefWidth="92.800048828125" text="Email" />
+                  <TableColumn fx:id="cliente_col_contacto" prefWidth="170.39998779296877" text="Contacto" />
+               </columns>
+            </TableView>
+            <Label layoutX="800.0" layoutY="-28.0" text="Cliente" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

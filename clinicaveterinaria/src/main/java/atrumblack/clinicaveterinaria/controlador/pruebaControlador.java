@@ -19,8 +19,8 @@ import org.springframework.stereotype.Component;
 import java.net.URL;
 import java.util.ResourceBundle;
 @Component
-public class ClienteControlador implements Initializable {
-    private static final Logger logger= LoggerFactory.getLogger(ClienteControlador.class);
+public class pruebaControlador implements Initializable {
+    private static final Logger logger= LoggerFactory.getLogger(pruebaControlador.class);
     @Autowired
     private ClienteServicio clienteServicio;
     @FXML
