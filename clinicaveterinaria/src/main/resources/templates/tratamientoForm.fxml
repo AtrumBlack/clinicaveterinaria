@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="tratamiento_form" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.TratamientoFormControlador">
+   <effect>
+      <Shadow>
+         <color>
+            <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+         </color>
+      </Shadow>
+   </effect>
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label layoutX="51.0" layoutY="352.1999999999999" text="Tipo:" AnchorPane.bottomAnchor="179.8" />
+            <TextField fx:id="tratamiento_text_tipo" layoutX="89.0" layoutY="338.19999999999993" promptText="Tipo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" />
+            <Label layoutX="33.0" layoutY="399.0" text="Importe Tratamiento:" AnchorPane.topAnchor="399.0" />
+            <TextField fx:id="tratamiento_tex_importe" layoutX="154.0" layoutY="385.6" promptText="Importe Tratamiento" styleClass="jfx-text-field" AnchorPane.topAnchor="385.6" />
+            <Label layoutX="252.0" layoutY="351.0" text="Descripcion:" AnchorPane.bottomAnchor="182.99999999999991" />
+            <TextField fx:id="tratamiento_tex_descripcion" layoutX="336.0" layoutY="335.19999999999993" prefHeight="26.0" prefWidth="515.0" promptText="Descripcion" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" />
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-añadir-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="tratamiento_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-editar-propiedad-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="tratamiento_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-clean-up-64.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="tratamiento_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-basura-llena-24.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="tratamiento_btn_agregar" layoutX="304.0" layoutY="509.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="308.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-añadir-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="852.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <TextField fx:id="tratamiento_txt_buscar" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-búsqueda-52.png" />
+               </image>
+            </ImageView>
+            <TableView layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="831.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.0">
+               <columns>
+                  <TableColumn fx:id="tratamiento_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                  <TableColumn fx:id="tratamiento_col_tipo" prefWidth="134.39999771118164" text="Tipo" />
+                  <TableColumn fx:id="tratamiento_col_descripcion" prefWidth="516.7999725341797" text="Descripcion" />
+                  <TableColumn fx:id="tratamiento_col_importe" prefWidth="158.39999999999998" text="Importe Tratamiento" />
+               </columns>
+            </TableView>
+            <Label layoutX="770.0" layoutY="-29.0" text="Tratamiento" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

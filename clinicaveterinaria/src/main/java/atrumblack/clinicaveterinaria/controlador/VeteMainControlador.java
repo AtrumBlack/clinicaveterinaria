@@ -200,113 +200,113 @@ public class VeteMainControlador implements Initializable {
     //-------------------------------------------------------------------------------------
 
     //Formulario Factura
-    @FXML
-    private JFXButton factura_btn_agregar;
-
-    @FXML
-    private JFXButton factura_btn_efectivo;
-
-    @FXML
-    private JFXButton factura_btn_limpiar;
-
-    @FXML
-    private JFXButton factura_btn_tarjeta;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_alias;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_cantidad;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_cliente;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_concepto;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_especie;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_fecha_visita;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_id;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_id_mascota;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_importe;
-
-    @FXML
-    private TableColumn<?, ?> factura_col_precio_unitario;
-
-    @FXML
-    private TableView<?> factura_tabla;
-
-    @FXML
-    private TableView<?> factura_tabla_mascota;
-
-    @FXML
-    private TextField factura_text_buscar_alias;
-
-    @FXML
-    private TextField factura_text_cliente;
-
-    @FXML
-    private TextField factura_text_direccion;
-
-    @FXML
-    private TextField factura_text_email;
-
-    @FXML
-    private TextField factura_text_importe_total;
-
-    @FXML
-    private TextField factura_text_telefono;
+//    @FXML
+//    private JFXButton factura_btn_agregar;
+//
+//    @FXML
+//    private JFXButton factura_btn_efectivo;
+//
+//    @FXML
+//    private JFXButton factura_btn_limpiar;
+//
+//    @FXML
+//    private JFXButton factura_btn_tarjeta;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_alias;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_cantidad;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_cliente;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_concepto;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_especie;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_fecha_visita;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_id;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_id_mascota;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_importe;
+//
+//    @FXML
+//    private TableColumn<?, ?> factura_col_precio_unitario;
+//
+//    @FXML
+//    private TableView<?> factura_tabla;
+//
+//    @FXML
+//    private TableView<?> factura_tabla_mascota;
+//
+//    @FXML
+//    private TextField factura_text_buscar_alias;
+//
+//    @FXML
+//    private TextField factura_text_cliente;
+//
+//    @FXML
+//    private TextField factura_text_direccion;
+//
+//    @FXML
+//    private TextField factura_text_email;
+//
+//    @FXML
+//    private TextField factura_text_importe_total;
+//
+//    @FXML
+//    private TextField factura_text_telefono;
 
     //-------------------------------------------------------------------------------------
     //Formulario Historia Clinica
 
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_alias;
-
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_alias_mascota;
-
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_cliente;
-
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_cliente_mascota;
-
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_id;
-
-    @FXML
-    private TableColumn<?, ?> historia_clinica_col_id_mascota;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_informacion_general;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_tratamiento;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_vacuna;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_vistas;
-
-    @FXML
-    private TableView<?> historia_clinica_tabla;
-
-    @FXML
-    private TableView<?> historia_clinica_tabla_mascota;
-
-    @FXML
-    private TextField historia_clinica_text_buscar_alias;
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_alias;
+//
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_alias_mascota;
+//
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_cliente;
+//
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_cliente_mascota;
+//
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_id;
+//
+//    @FXML
+//    private TableColumn<?, ?> historia_clinica_col_id_mascota;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_informacion_general;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_tratamiento;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_vacuna;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_vistas;
+//
+//    @FXML
+//    private TableView<?> historia_clinica_tabla;
+//
+//    @FXML
+//    private TableView<?> historia_clinica_tabla_mascota;
+//
+//    @FXML
+//    private TextField historia_clinica_text_buscar_alias;
 
     //-----------------------------------------------------------------------------
     //Formulario Principal - Main
@@ -341,199 +341,199 @@ public class VeteMainControlador implements Initializable {
 
     //Formulario Tratamiento
 
-    @FXML
-    private JFXButton tratamiento_btn_agregar;
-
-    @FXML
-    private JFXButton tratamiento_btn_eliminar;
-
-    @FXML
-    private JFXButton tratamiento_btn_limpiar;
-
-    @FXML
-    private JFXButton tratamiento_btn_modificar;
-
-    @FXML
-    private TableColumn<?, ?> tratamiento_col_descripcion;
-
-    @FXML
-    private TableColumn<?, ?> tratamiento_col_id;
-
-    @FXML
-    private TableColumn<?, ?> tratamiento_col_importe;
-
-    @FXML
-    private TableColumn<?, ?> tratamiento_col_tipo;
-
-    @FXML
-    private TextField tratamiento_tex_descripcion;
-
-    @FXML
-    private TextField tratamiento_tex_importe;
-
-    @FXML
-    private TextField tratamiento_text_tipo;
-
-    @FXML
-    private TextField tratamiento_txt_buscar;
+//    @FXML
+//    private JFXButton tratamiento_btn_agregar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_eliminar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_limpiar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_modificar;
+//
+//    @FXML
+//    private TableColumn<?, ?> tratamiento_col_descripcion;
+//
+//    @FXML
+//    private TableColumn<?, ?> tratamiento_col_id;
+//
+//    @FXML
+//    private TableColumn<?, ?> tratamiento_col_importe;
+//
+//    @FXML
+//    private TableColumn<?, ?> tratamiento_col_tipo;
+//
+//    @FXML
+//    private TextField tratamiento_tex_descripcion;
+//
+//    @FXML
+//    private TextField tratamiento_tex_importe;
+//
+//    @FXML
+//    private TextField tratamiento_text_tipo;
+//
+//    @FXML
+//    private TextField tratamiento_txt_buscar;
 
     //--------------------------------------------------------------
 
     //Formulario Turnos
 
-    @FXML
-    private JFXButton turnos_btn_10;
-
-    @FXML
-    private JFXButton turnos_btn_1030;
-
-    @FXML
-    private JFXButton turnos_btn_11;
-
-    @FXML
-    private JFXButton turnos_btn_1130;
-
-    @FXML
-    private JFXButton turnos_btn_12;
-
-    @FXML
-    private JFXButton turnos_btn_1230;
-
-    @FXML
-    private JFXButton turnos_btn_13;
-
-    @FXML
-    private JFXButton turnos_btn_1330;
-
-    @FXML
-    private JFXButton turnos_btn_14;
-
-    @FXML
-    private JFXButton turnos_btn_1430;
-
-    @FXML
-    private JFXButton turnos_btn_15;
-
-    @FXML
-    private JFXButton turnos_btn_1530;
-
-    @FXML
-    private JFXButton turnos_btn_16;
-
-    @FXML
-    private JFXButton turnos_btn_8;
-
-    @FXML
-    private JFXButton turnos_btn_830;
-
-    @FXML
-    private JFXButton turnos_btn_9;
-
-    @FXML
-    private JFXButton turnos_btn_930;
-
-    @FXML
-    private JFXButton turnos_btn_agregar;
-
-    @FXML
-    private JFXButton turnos_btn_eliminar;
-
-    @FXML
-    private JFXButton turnos_btn_limpiar;
-
-    @FXML
-    private JFXButton turnos_btn_modificar;
-
-    @FXML
-    private TableColumn<?, ?> turnos_col_alias;
-
-    @FXML
-    private TableColumn<?, ?> turnos_col_cliente;
-
-    @FXML
-    private TableColumn<?, ?> turnos_col_id;
-
-    @FXML
-    private DatePicker turnos_date_fecha_reserva;
-
-
-
-    @FXML
-    private TableView<?> turnos_tabla_mascota;
-
-    @FXML
-    private TextField turnos_text_buscar_alias;
-
-    @FXML
-    private TextField turnos_text_cliente;
+//    @FXML
+//    private JFXButton turnos_btn_10;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1030;
+//
+//    @FXML
+//    private JFXButton turnos_btn_11;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1130;
+//
+//    @FXML
+//    private JFXButton turnos_btn_12;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1230;
+//
+//    @FXML
+//    private JFXButton turnos_btn_13;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1330;
+//
+//    @FXML
+//    private JFXButton turnos_btn_14;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1430;
+//
+//    @FXML
+//    private JFXButton turnos_btn_15;
+//
+//    @FXML
+//    private JFXButton turnos_btn_1530;
+//
+//    @FXML
+//    private JFXButton turnos_btn_16;
+//
+//    @FXML
+//    private JFXButton turnos_btn_8;
+//
+//    @FXML
+//    private JFXButton turnos_btn_830;
+//
+//    @FXML
+//    private JFXButton turnos_btn_9;
+//
+//    @FXML
+//    private JFXButton turnos_btn_930;
+//
+//    @FXML
+//    private JFXButton turnos_btn_agregar;
+//
+//    @FXML
+//    private JFXButton turnos_btn_eliminar;
+//
+//    @FXML
+//    private JFXButton turnos_btn_limpiar;
+//
+//    @FXML
+//    private JFXButton turnos_btn_modificar;
+//
+//    @FXML
+//    private TableColumn<?, ?> turnos_col_alias;
+//
+//    @FXML
+//    private TableColumn<?, ?> turnos_col_cliente;
+//
+//    @FXML
+//    private TableColumn<?, ?> turnos_col_id;
+//
+//    @FXML
+//    private DatePicker turnos_date_fecha_reserva;
+//
+//
+//
+//    @FXML
+//    private TableView<?> turnos_tabla_mascota;
+//
+//    @FXML
+//    private TextField turnos_text_buscar_alias;
+//
+//    @FXML
+//    private TextField turnos_text_cliente;
 
     //---------------------------------------------------------
     //Formulario Visita
 
-    @FXML
-    private JFXButton visitas_btn_agregar;
-
-    @FXML
-    private JFXButton visitas_btn_agregar_tratamiento;
-
-    @FXML
-    private JFXButton visitas_btn_eliminar;
-
-    @FXML
-    private JFXButton visitas_btn_eliminar_tratamiento;
-
-    @FXML
-    private JFXButton visitas_btn_limpiar;
-
-    @FXML
-    private JFXButton visitas_btn_modificar;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_alias;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_cliente;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_descripcion;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_especie;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_id_mascota;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_id_tratamiento;
-
-    @FXML
-    private TableColumn<?, ?> visitas_col_tipo;
-
-
-
-    @FXML
-    private TableView<?> visitas_tabla_mascota;
-
-    @FXML
-    private TableView<?> visitas_tabla_tratamiento;
-
-    @FXML
-    private TextField visitas_text_alias;
-
-    @FXML
-    private TextField visitas_text_buscar_alias;
-
-    @FXML
-    private TextField visitas_text_cliente;
-
-    @FXML
-    private TextField visitas_text_destalles_sintomas;
-
-    @FXML
-    private TextField visitas_text_importe;
-
-    @FXML
-    private TextField visitas_text_peso_actual;
+//    @FXML
+//    private JFXButton visitas_btn_agregar;
+//
+//    @FXML
+//    private JFXButton visitas_btn_agregar_tratamiento;
+//
+//    @FXML
+//    private JFXButton visitas_btn_eliminar;
+//
+//    @FXML
+//    private JFXButton visitas_btn_eliminar_tratamiento;
+//
+//    @FXML
+//    private JFXButton visitas_btn_limpiar;
+//
+//    @FXML
+//    private JFXButton visitas_btn_modificar;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_alias;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_cliente;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_descripcion;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_especie;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_id_mascota;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_id_tratamiento;
+//
+//    @FXML
+//    private TableColumn<?, ?> visitas_col_tipo;
+//
+//
+//
+//    @FXML
+//    private TableView<?> visitas_tabla_mascota;
+//
+//    @FXML
+//    private TableView<?> visitas_tabla_tratamiento;
+//
+//    @FXML
+//    private TextField visitas_text_alias;
+//
+//    @FXML
+//    private TextField visitas_text_buscar_alias;
+//
+//    @FXML
+//    private TextField visitas_text_cliente;
+//
+//    @FXML
+//    private TextField visitas_text_destalles_sintomas;
+//
+//    @FXML
+//    private TextField visitas_text_importe;
+//
+//    @FXML
+//    private TextField visitas_text_peso_actual;
 
     //------------------------------------------------------------------------------------------------
     private Button selectedButton; // Variable para almacenar el botón seleccionado actualmente

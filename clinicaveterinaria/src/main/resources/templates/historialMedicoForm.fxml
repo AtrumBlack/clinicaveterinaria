@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="historia_clinica_form" prefHeight="609.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.HistorialMedicoFormControlador">
+   <effect>
+      <Shadow>
+         <color>
+            <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+         </color>
+      </Shadow>
+   </effect>
+   <children>
+      <AnchorPane layoutX="15.0" prefHeight="571.0" prefWidth="838.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <AnchorPane layoutX="505.0" layoutY="232.4" prefHeight="318.0" prefWidth="374.0" AnchorPane.topAnchor="232.4">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <AnchorPane layoutX="4.8" layoutY="26.2" prefHeight="300.0" prefWidth="365.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="4.8" AnchorPane.rightAnchor="4.800000000000011" AnchorPane.topAnchor="26.2">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="54.6" layoutY="4.0" prefHeight="19.0" prefWidth="122.0" styleClass="label-info" text="Historial de Visitas" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="historia_clinica_combo_vistas" focusColor="#272b3f" layoutX="15.2" layoutY="28.0" prefHeight="26.0" prefWidth="231.0" promptText="Historial de Visitas" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="107.0" layoutY="76.0" prefHeight="19.0" prefWidth="162.0" styleClass="label-info" text="Historial de Tratamientos" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="historia_clinica_combo_tratamiento" focusColor="#272b3f" layoutX="84.0" layoutY="100.0" prefHeight="26.0" prefWidth="231.0" promptText="Historial de Tratamientos" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="125.0" layoutY="149.0" prefHeight="19.0" prefWidth="122.0" styleClass="label-info" text="Vacunas Aplicadas" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="historia_clinica_combo_vacuna" focusColor="#272b3f" layoutX="85.0" layoutY="173.0" prefHeight="26.0" prefWidth="231.0" promptText="Vacunas Aplicadas" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                        <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="117.0" layoutY="221.0" prefHeight="19.0" prefWidth="138.0" styleClass="label-info" text="Información General" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="historia_clinica_combo_informacion_general" focusColor="#272b3f" layoutX="77.0" layoutY="245.0" prefHeight="26.0" prefWidth="231.0" promptText="Información General" unFocusColor="#b1a3a3" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="historia_clinica_text_buscar_alias" layoutX="507.0" layoutY="9.0" prefWidth="374.0" promptText="Buscar - alias" styleClass="search" AnchorPane.topAnchor="9.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="512.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-búsqueda-52.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="historia_clinica_tabla_mascota" layoutX="504.0" layoutY="67.0" prefHeight="158.0" prefWidth="375.0" styleClass="label">
+               <columns>
+                  <TableColumn fx:id="historia_clinica_col_id_mascota" prefWidth="29.5999755859375" text="Id" />
+                  <TableColumn fx:id="historia_clinica_col_alias_mascota" prefWidth="112.00006103515625" text="Alias" />
+                  <TableColumn fx:id="historia_clinica_col_cliente_mascota" prefWidth="231.99998779296874" text="Cliente" />
+               </columns>
+            </TableView>
+            <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="568.0" prefWidth="472.0" AnchorPane.bottomAnchor="23.0" AnchorPane.topAnchor="9.0">
+               <children>
+                  <TableView fx:id="historia_clinica_tabla" layoutX="22.0" layoutY="20.0" prefHeight="522.0" prefWidth="430.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <columns>
+                        <TableColumn fx:id="historia_clinica_col_id" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="historia_clinica_col_alias" prefWidth="75.0" text="Alias" />
+                        <TableColumn fx:id="historia_clinica_col_cliente" prefWidth="75.0" text="Cliente" />
+                     </columns>
+                  </TableView>
+               </children>
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="768.0" layoutY="-21.0" text="Historia Clinica" />
+   </children>
+</AnchorPane>

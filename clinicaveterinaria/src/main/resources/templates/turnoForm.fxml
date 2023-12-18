@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="turnos_form" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.TurnoFormControlador">
+   <effect>
+      <Shadow>
+         <color>
+            <Color red="0.7254902124404907" green="0.43921568989753723" blue="0.43921568989753723" />
+         </color>
+      </Shadow>
+   </effect>
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+               <image>
+                  <Image url="@../images/icons8-añadir-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="turnos_btn_limpiar" layoutX="693.0" layoutY="509.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="6.199999999999932" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="696.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.599999999999909">
+               <image>
+                  <Image url="@../images/icons8-clean-up-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="471.0" prefWidth="838.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="740.0" layoutY="-29.0" text="Reserva de Turnos" />
+            <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="449.0" prefWidth="392.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <DatePicker fx:id="turnos_date_fecha_reserva" layoutX="9.0" layoutY="22.0" prefHeight="29.0" prefWidth="364.0" styleClass="date-picker-popup" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" />
+                  <AnchorPane layoutX="14.0" layoutY="153.0" prefHeight="282.0" prefWidth="362.0">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <JFXButton fx:id="turnos_btn_8" layoutX="29.0" layoutY="10.0" styleClass="jfx-button2" text="08:00 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_830" layoutX="132.59999999999997" layoutY="10.0" styleClass="jfx-button2" text="08:30 hs" AnchorPane.rightAnchor="135.0" />
+                        <JFXButton fx:id="turnos_btn_9" layoutX="240.0" layoutY="10.0" styleClass="jfx-button2" text="09:00 hs" AnchorPane.rightAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_930" layoutX="28.0" layoutY="56.0" styleClass="jfx-button2" text="09:30 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_10" layoutX="134.0" layoutY="56.0" styleClass="jfx-button2" text="10:00 hs" AnchorPane.rightAnchor="135.0" />
+                        <JFXButton fx:id="turnos_btn_1030" layoutX="239.0" layoutY="56.0" styleClass="jfx-button2" text="10:30 hs" AnchorPane.rightAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_11" layoutX="29.0" layoutY="103.0" styleClass="jfx-button2" text="11:00 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_1130" layoutX="135.0" layoutY="103.0" styleClass="jfx-button2" text="11:30 hs" AnchorPane.rightAnchor="135.0" />
+                        <JFXButton fx:id="turnos_btn_12" layoutX="240.0" layoutY="103.0" styleClass="jfx-button2" text="12:00 hs" AnchorPane.rightAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_1230" layoutX="28.0" layoutY="149.0" styleClass="jfx-button2" text="12:30 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_13" layoutX="134.0" layoutY="149.0" styleClass="jfx-button2" text="13:00 hs" AnchorPane.rightAnchor="135.0" />
+                        <JFXButton fx:id="turnos_btn_1330" layoutX="239.0" layoutY="149.0" styleClass="jfx-button2" text="13:30 hs" AnchorPane.rightAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_14" layoutX="28.0" layoutY="193.0" styleClass="jfx-button2" text="14:00 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_1430" layoutX="134.0" layoutY="193.0" styleClass="jfx-button2" text="14:30 hs" AnchorPane.rightAnchor="135.0" />
+                        <JFXButton fx:id="turnos_btn_15" layoutX="239.0" layoutY="193.0" styleClass="jfx-button2" text="15:00 hs" AnchorPane.rightAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_1530" layoutX="27.0" layoutY="239.0" styleClass="jfx-button2" text="15:30 hs" AnchorPane.leftAnchor="29.0" />
+                        <JFXButton fx:id="turnos_btn_16" layoutX="133.0" layoutY="239.0" styleClass="jfx-button2" text="16:00 hs" AnchorPane.rightAnchor="135.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="418.0" layoutY="10.0" prefHeight="450.0" prefWidth="421.0">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <Label layoutX="64.0" layoutY="55.0" text="Alias:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="54.0" layoutY="125.0" text="Cliente:" />
+                  <TextField fx:id="turnos_text_cliente" layoutX="117.0" layoutY="111.0" prefHeight="26.0" prefWidth="274.0" promptText="Cliente" styleClass="jfx-text-field" AnchorPane.leftAnchor="117.0" />
+                  <Accordion layoutX="54.0" layoutY="55.0" />
+                  <TableView fx:id="turnos_tabla_mascota" layoutX="28.0" layoutY="156.0" prefHeight="200.0" prefWidth="356.0">
+                     <columns>
+                        <TableColumn fx:id="turnos_col_id" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="turnos_col_alias" prefWidth="97.5999755859375" text="Alias" />
+                        <TableColumn fx:id="turnos_col_cliente" prefWidth="182.39996337890625" text="Cliente" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="turnos_btn_agregar" layoutX="14.0" layoutY="390.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="26.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-añadir-50.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="turnos_btn_modificar" layoutX="130.0" layoutY="389.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="27.0" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="134.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.399999999999977">
+                     <image>
+                        <Image url="@../images/icons8-editar-propiedad-50.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="turnos_btn_eliminar" layoutX="312.0" layoutY="388.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="28.0" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="316.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="33.39999999999998">
+                     <image>
+                        <Image url="@../images/icons8-basura-llena-24.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="turnos_text_buscar_alias" layoutX="110.0" layoutY="41.0" promptText="Buscar - Alias" styleClass="search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="113.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-búsqueda-52.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
