@@ -220,11 +220,9 @@
                         </AnchorPane>
                     </left>
                     <center>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@dashboardDesign.css"
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0"
                                     BorderPane.alignment="CENTER">
                             <children>
-
-
                                 <AnchorPane fx:id="cliente_form" layoutX="10" layoutY="10" prefHeight="580.0"
                                             prefWidth="900.0" styleClass="shadow" visible="false"
                                             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
@@ -235,7 +233,6 @@
                                             prefWidth="900.0" styleClass="shadow" visible="false">
                                     <fx:include fx:id="mascotaInclude" source="mascotaForm.fxml"/>
                                 </AnchorPane>
-
                                 <AnchorPane fx:id="tratamiento_form" layoutX="20.0" layoutY="20.0" prefHeight="580.0"
                                             prefWidth="900.0" styleClass="shadow" visible="false">
                                     <fx:include fx:id="tratamientoInclude" source="tratamientoForm.fxml"/>
@@ -245,7 +242,7 @@
                                     <fx:include fx:id="visitaInclude" source="visitasForm.fxml"/>
                                 </AnchorPane>
                                 <AnchorPane fx:id="historia_clinica_form" layoutX="28.0" layoutY="7.0"
-                                            prefHeight="609.0" prefWidth="900.0" styleClass="shadow" visible="false">
+                                            prefHeight="580.0" prefWidth="900.0" styleClass="shadow" visible="false">
                                     <fx:include fx:id="historialMedicoInclude" source="historialMedicoForm.fxml"/>
                                 </AnchorPane>
                                 <AnchorPane fx:id="turnos_form" layoutX="30.0" layoutY="30.0" prefHeight="580.0"
@@ -254,157 +251,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="factura_form" layoutX="30.0" layoutY="30.0" prefHeight="580.0"
                                             prefWidth="900.0" styleClass="shadow" visible="false">
-                                    <effect>
-                                        <Shadow>
-                                            <color>
-                                                <Color red="0.7254902124404907" green="0.43921568989753723"
-                                                       blue="0.43921568989753723"/>
-                                            </color>
-                                        </Shadow>
-                                    </effect>
-                                    <children>
-                                        <AnchorPane layoutX="15.2" layoutY="-13.6" prefHeight="582.0" prefWidth="870.0"
-                                                    styleClass="white-bg" AnchorPane.bottomAnchor="12.0"
-                                                    AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0"
-                                                    AnchorPane.topAnchor="-14.0">
-                                            <children>
-                                                <AnchorPane layoutX="49.0" layoutY="171.0" prefHeight="92.0"
-                                                            prefWidth="770.0">
-                                                    <styleClass>
-                                                        <String fx:value="white-bg"/>
-                                                        <String fx:value="shadow"/>
-                                                    </styleClass>
-                                                    <children>
-                                                        <Label layoutX="10.0" layoutY="21.0" text="Apellido, Nombre:"/>
-                                                        <TextField fx:id="factura_text_cliente" layoutX="116.0"
-                                                                   layoutY="9.0" prefHeight="26.0" prefWidth="352.0"
-                                                                   promptText="Apellido, Nombre"
-                                                                   styleClass="jfx-text-field"/>
-                                                        <Label layoutX="53.0" layoutY="56.0" text="Direccion:"/>
-                                                        <TextField fx:id="factura_text_direccion" layoutX="116.0"
-                                                                   layoutY="44.0" prefHeight="26.0" prefWidth="352.0"
-                                                                   promptText="Direccion" styleClass="jfx-text-field"/>
-                                                        <Label layoutX="516.0" layoutY="19.0" text="Telefono:"/>
-                                                        <TextField fx:id="factura_text_telefono" layoutX="574.0"
-                                                                   layoutY="7.0" promptText="Telefono"
-                                                                   styleClass="jfx-text-field"/>
-                                                        <Label layoutX="536.0" layoutY="52.0" text="Email:"/>
-                                                        <TextField fx:id="factura_text_email" layoutX="582.0"
-                                                                   layoutY="40.0" promptText="Email"
-                                                                   styleClass="jfx-text-field"/>
-                                                    </children>
-                                                </AnchorPane>
-                                                <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0"
-                                                           layoutY="512.0" pickOnBounds="true" preserveRatio="true"
-                                                           AnchorPane.bottomAnchor="10.0">
-                                                    <image>
-                                                        <Image url="@../images/icons8-añadir-50.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <JFXButton fx:id="factura_btn_efectivo" layoutX="124.0" layoutY="540.0"
-                                                           prefHeight="34.0" prefWidth="103.0" styleClass="add-btn"
-                                                           text="Efectivo" AnchorPane.bottomAnchor="7.0"/>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="128.0"
-                                                           layoutY="542.2" pickOnBounds="true" preserveRatio="true"
-                                                           AnchorPane.bottomAnchor="14.399999999999977">
-                                                    <image>
-                                                        <Image url="@../images/icons8-efectivo-50.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <JFXButton fx:id="factura_btn_limpiar" layoutX="411.0" layoutY="538.0"
-                                                           prefHeight="34.0" prefWidth="164.0" styleClass="clear-btn"
-                                                           text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0"/>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="414.0"
-                                                           layoutY="545.4" pickOnBounds="true" preserveRatio="true"
-                                                           AnchorPane.bottomAnchor="11.200000000000045">
-                                                    <image>
-                                                        <Image url="@../images/icons8-clean-up-64.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <JFXButton fx:id="factura_btn_tarjeta" layoutX="241.0" layoutY="540.0"
-                                                           prefHeight="34.0" prefWidth="154.0" styleClass="delete-btn"
-                                                           text="Tarjeta de Credito" AnchorPane.bottomAnchor="7.0"/>
-                                                <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="244.0"
-                                                           layoutY="545.0" pickOnBounds="true" preserveRatio="true"
-                                                           AnchorPane.bottomAnchor="11.600000000000023">
-                                                    <image>
-                                                        <Image url="@../images/icons8-tarjeta-en-uso-50.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <JFXButton fx:id="factura_btn_agregar" layoutX="12.0" layoutY="540.0"
-                                                           prefHeight="34.0" prefWidth="103.0" styleClass="add-btn"
-                                                           text="Imprimir" AnchorPane.bottomAnchor="7.0"/>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0"
-                                                           layoutY="544.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../images/icons8-imprimir-50.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <TableView fx:id="factura_tabla" layoutX="44.0" layoutY="281.0"
-                                                           prefHeight="210.0" prefWidth="775.0"
-                                                           styleClass="new-table-view">
-                                                    <columns>
-                                                        <TableColumn fx:id="factura_col_id"
-                                                                     prefWidth="19.999983966350555" resizable="false"
-                                                                     text="Id"/>
-                                                        <TableColumn fx:id="factura_col_concepto"
-                                                                     prefWidth="499.1999969482422" text="Concepto"/>
-                                                        <TableColumn fx:id="factura_col_cantidad"
-                                                                     prefWidth="38.4000244140625" text="Cant"/>
-                                                        <TableColumn fx:id="factura_col_precio_unitario"
-                                                                     prefWidth="108.79998779296875" text="Precio Unit"/>
-                                                        <TableColumn fx:id="factura_col_importe"
-                                                                     prefWidth="108.7999267578125" text="Importe"/>
-                                                    </columns>
-                                                </TableView>
-                                                <Label layoutX="610.0" layoutY="514.0" text="Total"/>
-                                                <TextField fx:id="factura_text_importe_total" layoutX="656.0"
-                                                           layoutY="502.0" promptText="Email"
-                                                           styleClass="jfx-text-field" text="total"/>
-                                            </children>
-                                        </AnchorPane>
-                                        <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="118.0" prefWidth="852.0">
-                                            <styleClass>
-                                                <String fx:value="shadow"/>
-                                                <String fx:value="white-bg"/>
-                                            </styleClass>
-                                            <children>
-                                                <TextField fx:id="factura_text_buscar_alias" layoutX="6.0" layoutY="9.0"
-                                                           prefWidth="220.0" promptText="Buscar - alias"
-                                                           styleClass="search">
-                                                    <font>
-                                                        <Font size="14.0"/>
-                                                    </font>
-                                                </TextField>
-                                                <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="9.0" layoutY="18.0"
-                                                           pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../images/icons8-búsqueda-52.png"/>
-                                                    </image>
-                                                </ImageView>
-                                                <TableView fx:id="factura_tabla_mascota" layoutX="235.2" layoutY="7.0"
-                                                           prefHeight="102.0" prefWidth="604.0"
-                                                           styleClass="new-table-view" AnchorPane.leftAnchor="235.0"
-                                                           AnchorPane.rightAnchor="13.0">
-                                                    <columns>
-                                                        <TableColumn fx:id="factura_col_id_mascota"
-                                                                     prefWidth="19.999983966350555" resizable="false"
-                                                                     text="Id"/>
-                                                        <TableColumn fx:id="factura_col_alias"
-                                                                     prefWidth="92.79999160766602" text="Alias"/>
-                                                        <TableColumn fx:id="factura_col_cliente"
-                                                                     prefWidth="213.6000213623047" text="Cliente"/>
-                                                        <TableColumn fx:id="factura_col_especie"
-                                                                     prefWidth="141.59991455078125" text="Especie"/>
-                                                        <TableColumn fx:id="factura_col_fecha_visita"
-                                                                     prefWidth="132.79998779296875"
-                                                                     text="Fecha Visita"/>
-                                                    </columns>
-                                                </TableView>
-                                            </children>
-                                        </AnchorPane>
-                                        <Label layoutX="828.0" layoutY="-38.0" text="Factura"/>
-                                    </children>
+                                    <fx:include fx:id="facturaInclude" source="facturaForm.fxml"/>
                                 </AnchorPane>
                             </children>
                         </AnchorPane>
