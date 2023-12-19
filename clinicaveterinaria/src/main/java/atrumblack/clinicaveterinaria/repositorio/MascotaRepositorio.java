@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MascotaRepositorio extends JpaRepository<Mascota,Integer> {
+
+    List<Mascota> findByCliente_IdClienteAndActivoIsTrue(Integer idCliente);
+
+
 //    Optional<Mascota> findByAliasAndIdCliente_IdClienteAndEstadoIsTrue(String alias, Integer idCliente);
 //
 //    List<Mascota> findByAliasAndEstadoIsTrue(String alias);

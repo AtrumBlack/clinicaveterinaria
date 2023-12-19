@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="turnos_form" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.TurnosFormControlador">
+<AnchorPane fx:id="turnos_form" prefHeight="600.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.TurnosFormControlador">
    <effect>
       <Shadow>
          <color>
@@ -26,11 +26,6 @@
    <children>
       <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
-               <image>
-                  <Image url="@../images/icons8-añadir-50.png" />
-               </image>
-            </ImageView>
             <JFXButton fx:id="turnos_btn_limpiar" layoutX="693.0" layoutY="509.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="6.199999999999932" />
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="696.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.599999999999909">
                <image>
@@ -39,13 +34,13 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="471.0" prefWidth="838.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+      <AnchorPane layoutX="24.8" layoutY="55.0" prefHeight="471.0" prefWidth="838.0" AnchorPane.leftAnchor="24.8" AnchorPane.rightAnchor="24.799999999999955">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="white-bg" />
          </styleClass>
          <children>
-            <Label layoutX="740.0" layoutY="-29.0" text="Reserva de Turnos" />
+            <Label layoutX="740.0" layoutY="-31.0" text="Reserva de Turnos" />
             <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="449.0" prefWidth="392.0">
                <styleClass>
                   <String fx:value="white-bg" />

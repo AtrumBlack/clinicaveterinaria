@@ -15,7 +15,11 @@ public interface IClienteServicio {
 //    public Cliente buscarListaClientexDni(Integer dni);
 //    public Cliente obtenerClientexId(Integer idCliente);
 //
-//    public List<Cliente> listarClientes();
+    public List<Cliente> listarClientes();
+    public List<Cliente> buscarClientesPorApellido(String apellido);
+
+    void eliminarCliente(Cliente cliente);
+
 //    public List<Cliente> obtenerClientesConMascota();
 //    public List<Cliente> obtenerClientesSinMascota();
 //    public List<Cliente> listarClientePorEstado(Boolean estado);

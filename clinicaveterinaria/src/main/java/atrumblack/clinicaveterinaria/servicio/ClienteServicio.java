@@ -29,6 +29,7 @@ public class ClienteServicio implements IClienteServicio{
 
     }
 
+
 //    @Override
 //    public void bajaLogica(Integer dni) {
 //        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
@@ -64,11 +65,20 @@ public class ClienteServicio implements IClienteServicio{
 //        return clienteRepositorio.findById(idCliente).orElse(null);
 //    }
 //
-//    @Override
-//    public List<Cliente> listarClientes() {
-//        return clienteRepositorio.findByEstadoIsTrue();
-//        //return clienteRepositorio.findAll();
-//    }
+    @Override
+    public List<Cliente> listarClientes() {
+        return clienteRepositorio.findAll();
+        //return clienteRepositorio.findAll();
+    }
+    @Override
+    public List<Cliente> buscarClientesPorApellido(String apellido) {
+        return clienteRepositorio.findByApellido(apellido);
+    }
+
+    @Override
+    public void eliminarCliente(Cliente cliente) {
+        clienteRepositorio.delete(cliente);
+    }
 //
 //    @Override
 //    public List<Cliente> obtenerClientesConMascota() {

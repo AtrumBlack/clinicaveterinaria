@@ -24,12 +24,12 @@
    <children>
       <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <children>
-            <Label layoutX="51.0" layoutY="352.1999999999999" text="Tipo:" AnchorPane.bottomAnchor="179.8" />
-            <TextField fx:id="tratamiento_text_tipo" layoutX="89.0" layoutY="338.19999999999993" promptText="Tipo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" />
-            <Label layoutX="33.0" layoutY="399.0" text="Importe Tratamiento:" AnchorPane.topAnchor="399.0" />
-            <TextField fx:id="tratamiento_tex_importe" layoutX="154.0" layoutY="385.6" promptText="Importe Tratamiento" styleClass="jfx-text-field" AnchorPane.topAnchor="385.6" />
-            <Label layoutX="252.0" layoutY="351.0" text="Descripcion:" AnchorPane.bottomAnchor="182.99999999999991" />
-            <TextField fx:id="tratamiento_tex_descripcion" layoutX="336.0" layoutY="335.19999999999993" prefHeight="26.0" prefWidth="515.0" promptText="Descripcion" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" />
+            <Label layoutX="51.0" layoutY="411.5999999999999" text="Tipo:" AnchorPane.bottomAnchor="120.39999999999998" />
+            <TextField fx:id="tratamiento_text_tipo" layoutX="89.0" layoutY="397.19999999999993" promptText="Tipo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="126.0" />
+            <Label layoutX="33.0" layoutY="462.0" text="Importe Tratamiento:" AnchorPane.topAnchor="462.0" />
+            <TextField fx:id="tratamiento_tex_importe" layoutX="154.0" layoutY="448.4" promptText="Importe Tratamiento" styleClass="jfx-text-field" AnchorPane.topAnchor="448.4" />
+            <Label layoutX="252.0" layoutY="407.5999999999999" text="Descripcion:" AnchorPane.bottomAnchor="124.39999999999998" />
+            <TextField fx:id="tratamiento_tex_descripcion" layoutX="336.0" layoutY="394.79999999999995" prefHeight="26.0" prefWidth="515.0" promptText="Descripcion" styleClass="jfx-text-field" AnchorPane.bottomAnchor="128.39999999999998" />
             <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
                <image>
                   <Image url="@../images/icons8-añadir-50.png" />
@@ -61,7 +61,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="852.0">
+      <AnchorPane layoutX="25.0" layoutY="75.0" prefHeight="319.0" prefWidth="852.0">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="white-bg" />
@@ -85,7 +85,7 @@
                   <TableColumn fx:id="tratamiento_col_importe" prefWidth="158.39999999999998" text="Importe Tratamiento" />
                </columns>
             </TableView>
-            <Label layoutX="770.0" layoutY="-29.0" text="Tratamiento" />
+            <Label layoutX="781.0" layoutY="-31.0" text="Tratamiento" />
          </children>
       </AnchorPane>
    </children>

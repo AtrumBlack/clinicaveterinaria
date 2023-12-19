@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ClienteRepositorio extends JpaRepository<Cliente, Integer> {
+    List<Cliente> findByApellido(String apellido);
+
 //    Optional<Cliente> findByDni(Integer dni);
 
 //    List<Cliente> findByEstado(Boolean estado);

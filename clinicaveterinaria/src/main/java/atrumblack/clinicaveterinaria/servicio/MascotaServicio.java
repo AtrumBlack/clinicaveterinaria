@@ -8,10 +8,11 @@ import atrumblack.clinicaveterinaria.repositorio.MascotaRepositorio;
 import atrumblack.clinicaveterinaria.repositorio.TratamientoRepositorio;
 import atrumblack.clinicaveterinaria.repositorio.VisitasTratamientoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class MascotaServicio implements IMascotaServicio{
     @Autowired
     private MascotaRepositorio mascotaRepositorio;
@@ -22,6 +23,12 @@ public class MascotaServicio implements IMascotaServicio{
     public void guardarMascota(Mascota mascota) {
         mascotaRepositorio.save(mascota);
     }
+
+    @Override
+    public List<Mascota> listarMascotaPorCliente(Integer idCliente) {
+        return mascotaRepositorio.findByCliente_IdClienteAndActivoIsTrue(idCliente);
+    }
+
 
 //    @Override
 //    public void bajaLogica(Integer id) {

@@ -93,7 +93,7 @@
                   <TableColumn fx:id="mascota_col_sexo" prefWidth="76.79998779296875" text="Sexo" />
                </columns>
             </TableView>
-            <Label layoutX="800.0" layoutY="-30.0" text="Mascota" />
+            <Label layoutX="800.0" text="Mascota" />
          </children>
       </AnchorPane>
    </children>

@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IMascotaServicio {
     public void guardarMascota(Mascota mascota);
+    public List<Mascota> listarMascotaPorCliente(Integer idCliente);
 //
 ////    public void bajaLogica(Integer dni);
 ////

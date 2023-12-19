@@ -64,19 +64,19 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <JFXButton fx:id="cliente_btn_agregar" layoutX="305.0" layoutY="508.0" prefHeight="34.0" prefWidth="90.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
+            <JFXButton fx:id="cliente_btn_agregar" layoutX="305.0" layoutY="508.0" onAction="#agregarTarea" prefHeight="34.0" prefWidth="90.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="7.0" />
             <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
                <image>
                   <Image url="@../images/icons8-añadir-50.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="cliente_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
+            <JFXButton fx:id="cliente_btn_modificar" layoutX="424.0" layoutY="507.0" onAction="#modificarTarea" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
                <image>
                   <Image url="@../images/icons8-editar-propiedad-50.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="cliente_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
+            <JFXButton fx:id="cliente_btn_limpiar" layoutX="563.0" layoutY="508.0" onAction="#limpiarFormulario" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
                <image>
                   <Image url="@../images/icons8-clean-up-64.png" />
@@ -106,7 +106,7 @@
                   <Image url="@../images/icons8-búsqueda-52.png" />
                </image>
             </ImageView>
-            <TableView fx:id="cliente_tabla" layoutX="10.0" layoutY="62.0" prefHeight="200.0" prefWidth="829.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <TableView fx:id="cliente_tabla" layoutX="10.0" layoutY="62.0" onMouseClicked="#cargarClienteFormulario" prefHeight="200.0" prefWidth="829.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                <columns>
                   <TableColumn fx:id="cliente_col_id" prefWidth="31.999984741210938" resizable="false" text="Id" />
                   <TableColumn fx:id="cliente_col_documento" text="Documento" />
@@ -118,7 +118,7 @@
                   <TableColumn fx:id="cliente_col_contacto" prefWidth="170.39998779296877" text="Contacto" />
                </columns>
             </TableView>
-            <Label layoutX="800.0" layoutY="-28.0" text="Cliente" />
+            <Label layoutX="800.0" layoutY="-2.0" text="Cliente" />
          </children>
       </AnchorPane>
    </children>
