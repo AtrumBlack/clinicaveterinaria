@@ -30,22 +30,22 @@ public class Cliente implements Serializable {
     @Column(name = "apellido", nullable = false, length = 75)
     private String apellido;
 
-    @Column(name = "nombre", nullable = false, length = 75)
+    @Column(name = "nombre", nullable = true, length = 75)
     private String nombre;
 
-    @Column(name = "direccion", nullable = false, length = 100)
+    @Column(name = "direccion", nullable = true, length = 100)
     private String direccion;
 
-    @Column(name = "telefono", nullable = false, length = 20)
+    @Column(name = "telefono", nullable = true, length = 20)
     private String telefono;
 
     @Column(name = "activo", nullable = false)
     private Boolean activo;
 
-    @Column(name = "email", nullable = false, length = 50)
+    @Column(name = "email", nullable = true, length = 50)
     private String email; // Dirección de correo electrónico del cliente
 
-    @Column(name = "alternativa", nullable = false, length = 100)
+    @Column(name = "alternativa", nullable = true, length = 100)
     private String alternativa; // Nombre del contacto de emergencia del cliente
 
 //    @OneToMany(mappedBy = "visita", cascade = CascadeType.ALL)

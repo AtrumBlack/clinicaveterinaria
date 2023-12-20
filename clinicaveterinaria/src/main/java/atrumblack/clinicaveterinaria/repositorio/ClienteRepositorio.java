@@ -10,6 +10,8 @@ import java.util.Optional;
 public interface ClienteRepositorio extends JpaRepository<Cliente, Integer> {
     List<Cliente> findByApellido(String apellido);
 
+    Cliente findByDocumento(String documento);
+
 //    Optional<Cliente> findByDni(Integer dni);
 
 //    List<Cliente> findByEstado(Boolean estado);

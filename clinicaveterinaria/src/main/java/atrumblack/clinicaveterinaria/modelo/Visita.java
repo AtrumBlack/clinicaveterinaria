@@ -39,10 +39,10 @@ public class Visita implements Serializable {
     @Column(name = "detalles_sintoma", nullable = false, length = 100)
     private String detallesSintoma;
 
-    @Column(name = "peso_actual", nullable = false, precision = 5, scale = 2)
+    @Column(name = "peso_actual", nullable = true, precision = 5, scale = 2)
     private BigDecimal pesoActual;
 
-    @Column(name = "importe", nullable = false, precision = 5, scale = 2)
+    @Column(name = "importe", nullable = true, precision = 5, scale = 2)
     private BigDecimal importe;// es el importe de la vissita, no puedo hacer de otra forma porque si hago el calculo con el importe del tratamiento
     //seguramente me encuengtro que el valor cambio
 

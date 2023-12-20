@@ -28,10 +28,10 @@ public class Tratamiento implements Serializable {
     @JoinColumn(name = "id_historial_medico")
     private HistorialMedico historialMedico;
 
-    @Column(name = "descripcion", nullable = false, length = 200)
+    @Column(name = "descripcion", nullable = true, length = 200)
     private String descripcion; // Descripción detallada del tratamiento
 
-    @Column(name = "importe_tratamiento", nullable = false, precision = 5, scale = 2)
+    @Column(name = "importe_tratamiento", nullable = true, precision = 5, scale = 2)
     private BigDecimal importeTratamiento; // Costo del tratamiento
 
     @Column(name = "activo", nullable = false)

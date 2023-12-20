@@ -36,7 +36,7 @@ public class VisitasTratamiento implements Serializable {
     @JoinColumn(name = "id_tratamiento")
     private Tratamiento tratamiento; // Tratamiento asociado al tratamiento realizado
 
-    @Column(name = "importe", nullable = false, precision = 5, scale = 2)
+    @Column(name = "importe", nullable = true, precision = 5, scale = 2)
     private BigDecimal importe;// es el importe del tratamiento que se le hizo  a la mascota en la visita
 
 

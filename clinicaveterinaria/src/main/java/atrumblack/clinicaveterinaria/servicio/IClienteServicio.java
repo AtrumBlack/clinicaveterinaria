@@ -17,6 +17,7 @@ public interface IClienteServicio {
 //
     public List<Cliente> listarClientes();
     public List<Cliente> buscarClientesPorApellido(String apellido);
+    public Cliente buscarClientePorDocumento(String documento);
 
     void eliminarCliente(Cliente cliente);
 

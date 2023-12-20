@@ -160,6 +160,13 @@ public class ClienteFormControlador extends FormularioControlador {
         // Configurar el Listener para la búsqueda en tiempo real
 //        cliente_text_buscar_alias.textProperty().addListener((observable, oldValue, newValue) -> buscarClientePorApellido(newValue));
 
+        // Agregar un ChangeListener para manejar la selección de la tabla en tiempo real
+        cliente_tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                idClienteInterno = newValue.getIdCliente();
+                cargarClienteFormulario();
+            }
+        });
     }
 
     private void configurarListeners() {
@@ -200,33 +207,83 @@ public class ClienteFormControlador extends FormularioControlador {
         }
     }
 
-    public void agregarTarea() {
-        if (cliente_text_apellido.getText().isEmpty()) {
-            mostrarMensaje("Error Validacion", "Debe proporcionar una Apellido");
-            cliente_text_apellido.requestFocus();
+    public void agregarCliente() {
+        String apellido = cliente_text_apellido.getText();
+        String documento = cliente_text_documento.getText();
+
+        if (apellido.isEmpty() || documento.isEmpty()) {
+            if (apellido.isEmpty()) {
+                mostrarMensaje("Error Validación", "Debe proporcionar un Apellido");
+                cliente_text_apellido.requestFocus();
+            } else {
+                mostrarMensaje("Error Validación", "Debe proporcionar un Documento");
+                cliente_text_documento.requestFocus();
+            }
             return;
+        }
+
+        Cliente cliente = new Cliente();
+        recolectarDatosFormulario(cliente);
+
+        Cliente clienteExistente = vereficarDocumento(cliente);
+        if (clienteExistente != null) {
+            mostrarMensaje("Información", "El número de Documento ya se encuentra registrado");
+            limpiarFormulario();
+            listarCliente();
         } else {
-            var cliente = new Cliente();
-            recolectarDatosFormulario(cliente);
             cliente.setIdCliente(null);
             clienteServicio.guardarCliente(cliente);
-            mostrarMensaje("Informacion", "Cliente agregado");
+            mostrarMensaje("Información", "Cliente agregado");
             limpiarFormulario();
             listarCliente();
         }
     }
 
+
+    public void agregarMascota() {
+        if (idClienteInterno == null) {
+            mostrarMensaje("Informacion", "Debe seleccionar un Cliente");
+            return;
+        }
+        if (cliente_text_alias_mascota.getText().isEmpty()) {
+            mostrarMensaje("Error Validacion", "Debes de proporcionar un Alias");
+            cliente_text_alias_mascota.requestFocus();
+            return;
+        } else {
+            var mascota = new Mascota();
+            recolectarDatosFormularioMascota(mascota);
+            mascota.setIdMascota(null);
+            mascotaServicio.guardarMascota(mascota);
+            mostrarMensaje("Informacion", "Mascota agregada");
+            //limpiarFormulario();
+            limpiarFormularioMascota();
+            listarMoscota(idClienteInterno);
+        }
+    }
+
     private void recolectarDatosFormulario(Cliente cliente) {
+        // if (idClienteInterno != null) {
+        cliente.setIdCliente(idClienteInterno);
+        cliente.setApellido(cliente_text_apellido.getText());
+        cliente.setNombre(cliente_text_nombre.getText());
+        cliente.setDocumento(cliente_text_documento.getText());
+        cliente.setDireccion(cliente_text_direccion.getText());
+        cliente.setEmail(cliente_text_email.getText());
+        cliente.setTelefono(cliente_text_telefono.getText());
+        cliente.setAlternativa(cliente_text_contacto.getText());
+        cliente.setActivo(true);
+        //  }
+
+    }
+
+    private void recolectarDatosFormularioMascota(Mascota mascota) {
+        var cliente = new Cliente();
+        recolectarDatosFormulario(cliente);
         if (idClienteInterno != null) {
-            cliente.setIdCliente(idClienteInterno);
-            cliente.setApellido(cliente_text_apellido.getText());
-            cliente.setNombre(cliente_text_nombre.getText());
-            cliente.setDocumento(cliente_text_documento.getText());
-            cliente.setDireccion(cliente_text_direccion.getText());
-            cliente.setEmail(cliente_text_email.getText());
-            cliente.setTelefono(cliente_text_telefono.getText());
-            cliente.setAlternativa(cliente_text_contacto.getText());
-            cliente.setActivo(true);
+            mascota.setCliente(cliente);
+            mascota.setAlias(cliente_text_alias_mascota.getText());
+            mascota.setEspecie(cliente_text_especie_mascota.getText());
+            mascota.setActivo(true);
         }
 
     }
@@ -248,14 +305,29 @@ public class ClienteFormControlador extends FormularioControlador {
         cliente_text_email.clear();
         cliente_text_telefono.clear();
         cliente_text_contacto.clear();
+        // Limpiar la tabla cliente_tabla
+        cliente_tabla.getItems().clear();
+        cliente_text_alias_mascota.clear();
+        cliente_text_especie_mascota.clear();
+        // Limpiar la tabla cliente_tabla_Mascota
+        cliente_tabla_Mascota.getItems().clear();
+        initialize();
     }
 
-    public void modificarTarea(){
-        if(idClienteInterno == null){
-            mostrarMensaje("Informacion", "Debe seleccionar una tarea");
+    public void limpiarFormularioMascota() {
+        //idClienteInterno = null;
+        cliente_text_alias_mascota.clear();
+        cliente_text_especie_mascota.clear();
+        // Limpiar la tabla cliente_tabla_Mascota
+        //cliente_tabla_Mascota.getItems().clear();
+    }
+
+    public void modificarCliente() {
+        if (idClienteInterno == null) {
+            mostrarMensaje("Informacion", "Debe seleccionar un Cliente");
             return;
         }
-        if(cliente_text_apellido.getText().isEmpty()){
+        if (cliente_text_apellido.getText().isEmpty()) {
             mostrarMensaje("Error Validacion", "Debe proporcionar un Apellido");
             cliente_text_apellido.requestFocus();
             return;
@@ -263,21 +335,26 @@ public class ClienteFormControlador extends FormularioControlador {
         var cliente = new Cliente();
         recolectarDatosFormulario(cliente);
         clienteServicio.guardarCliente(cliente);
-        mostrarMensaje("Informacion", "Tarea modificada");
+        mostrarMensaje("Informacion", "Cliente modificado");
         limpiarFormulario();
         listarCliente();
     }
 
-    public void eliminarCliente(){
+    private Cliente vereficarDocumento(Cliente cliente) {
+
+        return clienteServicio.buscarClientePorDocumento(cliente.getDocumento());
+
+    }
+
+    public void eliminarCliente() {
         var cliente = cliente_tabla.getSelectionModel().getSelectedItem();
-        if(cliente != null){
+        if (cliente != null) {
             logger.info("Registro a eliminar: " + cliente.toString());
             clienteServicio.eliminarCliente(cliente);
             mostrarMensaje("Informacion", "Tarea eliminada:" + cliente.getIdCliente());
             limpiarFormulario();
             listarCliente();
-        }
-        else{
+        } else {
             mostrarMensaje("Error", "No se ha seleccionado ningun Cliente");
         }
     }

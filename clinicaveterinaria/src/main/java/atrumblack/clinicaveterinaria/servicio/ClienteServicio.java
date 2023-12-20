@@ -76,6 +76,11 @@ public class ClienteServicio implements IClienteServicio{
     }
 
     @Override
+    public Cliente buscarClientePorDocumento(String documento) {
+        return clienteRepositorio.findByDocumento(documento);
+    }
+
+    @Override
     public void eliminarCliente(Cliente cliente) {
         clienteRepositorio.delete(cliente);
     }

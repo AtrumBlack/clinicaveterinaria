@@ -30,25 +30,25 @@ public class Mascota implements Serializable {
     private String alias; // Alias o nombre de la mascota
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "sexo", nullable = false, length = 1)
+    @Column(name = "sexo", nullable = true, length = 1)
     private Sexo sexo;
 
-    @Column(name = "especie", nullable = false, length = 75)
+    @Column(name = "especie", nullable = true, length = 75)
     private String especie; // Especie de la mascota (por ejemplo, perro, gato, etc.)
-    @Column(name = "raza", nullable = false, length = 75)
+    @Column(name = "raza", nullable = true, length = 75)
     private String raza; // Raza de la mascota
 
-    @Column(name = "color_de_pelo", nullable = false, length = 50)
+    @Column(name = "color_de_pelo", nullable = true, length = 50)
     private String colorDePelo; // Color del pelaje de la mascota
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "fecha_nacimiento", nullable = false)
+    @Column(name = "fecha_nacimiento", nullable = true)
     private LocalDate fechaNacimiento; // Fecha de nacimiento de la mascota
 
-    @Column(name = "peso_promedio", nullable = false, precision = 5, scale = 2)
+    @Column(name = "peso_promedio", nullable = true, precision = 5, scale = 2)
     private BigDecimal pesoPromedio;
 
-    @Column(name = "peso_actual", nullable = false, precision = 5, scale = 2)
+    @Column(name = "peso_actual", nullable = true, precision = 5, scale = 2)
     private BigDecimal pesoActual;
 
 
