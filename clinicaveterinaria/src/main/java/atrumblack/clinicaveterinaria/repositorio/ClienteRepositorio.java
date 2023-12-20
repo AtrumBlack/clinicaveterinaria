@@ -1,6 +1,7 @@
 package atrumblack.clinicaveterinaria.repositorio;
 
 import atrumblack.clinicaveterinaria.modelo.Cliente;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -12,19 +13,18 @@ public interface ClienteRepositorio extends JpaRepository<Cliente, Integer> {
 
     Cliente findByDocumento(String documento);
 
-//    Optional<Cliente> findByDni(Integer dni);
+    List<Cliente> findByActivoTrueAndApellido(String apellido);
 
-//    List<Cliente> findByEstado(Boolean estado);
+    Cliente findByActivoTrueAndDocumento(String documento);
 
-//    Optional<Cliente> findByDniAndEstado(Integer dni, Boolean estado);
-//
-//    Optional<Cliente> findByDniAndEstadoIsTrue(Integer dni);
+    List<Cliente> findByActivoTrue();
 
-//    List<Cliente> findByEstadoIsTrue();
+    @Transactional
+    default void eliminarCliente(Integer clienteId) {
+        findById(clienteId).ifPresent(cliente -> {
+            cliente.setActivo(false);
+            save(cliente);
+        });
+    }
 
-//    @Query("SELECT DISTINCT c FROM Cliente c WHERE c.estado = true AND EXISTS (SELECT 1 FROM Mascota m WHERE m.idCliente = c)")
-//    List<Cliente> obtenerClientesConMascota();
-
-//    @Query("SELECT DISTINCT c FROM Cliente c WHERE c.estado = true AND NOT EXISTS (SELECT m.cliente FROM Mascota m WHERE m.cliente IS c)")
-//    List<Cliente> obtenerClientesSinMascota();
 }

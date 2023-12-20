@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -157,13 +158,11 @@ public class ClienteFormControlador extends FormularioControlador {
         configurarListeners();
         listarCliente();
 
-        // Configurar el Listener para la búsqueda en tiempo real
-//        cliente_text_buscar_alias.textProperty().addListener((observable, oldValue, newValue) -> buscarClientePorApellido(newValue));
-
         // Agregar un ChangeListener para manejar la selección de la tabla en tiempo real
         cliente_tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 idClienteInterno = newValue.getIdCliente();
+
                 cargarClienteFormulario();
             }
         });
@@ -185,14 +184,7 @@ public class ClienteFormControlador extends FormularioControlador {
         cliente_tabla.setItems(FXCollections.observableArrayList(clientesFiltrados));
     }
 
-    // Método para buscar clientes por apellido
-    private void buscarClientePorApellido(String apellido) {
-        clienteList.clear();
-        clienteList.addAll(clienteServicio.buscarClientesPorApellido(apellido));
-        cliente_tabla.setItems(clienteList);
-    }
-
-    public void cargarClienteFormulario() {
+     public void cargarClienteFormulario() {
         var cliente = cliente_tabla.getSelectionModel().getSelectedItem();
         if (cliente != null) {
             idClienteInterno = cliente.getIdCliente();
@@ -212,13 +204,9 @@ public class ClienteFormControlador extends FormularioControlador {
         String documento = cliente_text_documento.getText();
 
         if (apellido.isEmpty() || documento.isEmpty()) {
-            if (apellido.isEmpty()) {
-                mostrarMensaje("Error Validación", "Debe proporcionar un Apellido");
-                cliente_text_apellido.requestFocus();
-            } else {
-                mostrarMensaje("Error Validación", "Debe proporcionar un Documento");
-                cliente_text_documento.requestFocus();
-            }
+            String mensaje = apellido.isEmpty() ? "Debe proporcionar un Apellido" : "Debe proporcionar un Documento";
+            mostrarMensaje("Error Validación", mensaje);
+            cliente_text_apellido.requestFocus();
             return;
         }
 
@@ -226,10 +214,20 @@ public class ClienteFormControlador extends FormularioControlador {
         recolectarDatosFormulario(cliente);
 
         Cliente clienteExistente = vereficarDocumento(cliente);
-        if (clienteExistente != null) {
+        if (clienteExistente != null && clienteExistente.getActivo()) {
             mostrarMensaje("Información", "El número de Documento ya se encuentra registrado");
             limpiarFormulario();
             listarCliente();
+        } else if (clienteExistente != null && !clienteExistente.getActivo()) {
+            // Preguntar al usuario si desea activar el cliente existente
+            if (confirmarActivacionCliente()) {
+                // Activar el cliente existente y guardar cambios
+                clienteExistente.setActivo(true);
+                clienteServicio.guardarCliente(clienteExistente);
+                mostrarMensaje("Información", "Cliente activado");
+                limpiarFormulario();
+                listarCliente();
+            }
         } else {
             cliente.setIdCliente(null);
             clienteServicio.guardarCliente(cliente);
@@ -239,6 +237,13 @@ public class ClienteFormControlador extends FormularioControlador {
         }
     }
 
+    private boolean confirmarActivacionCliente() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmar Activación");
+        alert.setHeaderText("El cliente ya existe pero está inactivo. ¿Desea activarlo?");
+        Optional<ButtonType> result = alert.showAndWait();
+        return result.isPresent() && result.get() == ButtonType.OK;
+    }
 
     public void agregarMascota() {
         if (idClienteInterno == null) {
@@ -349,9 +354,9 @@ public class ClienteFormControlador extends FormularioControlador {
     public void eliminarCliente() {
         var cliente = cliente_tabla.getSelectionModel().getSelectedItem();
         if (cliente != null) {
-            logger.info("Registro a eliminar: " + cliente.toString());
+            //logger.info("Registro a eliminar: " + cliente.toString());
             clienteServicio.eliminarCliente(cliente);
-            mostrarMensaje("Informacion", "Tarea eliminada:" + cliente.getIdCliente());
+            mostrarMensaje("Informacion", "Cliente eliminado:" + cliente.getIdCliente());
             limpiarFormulario();
             listarCliente();
         } else {

@@ -11,6 +11,8 @@ public interface MascotaRepositorio extends JpaRepository<Mascota,Integer> {
 
     List<Mascota> findByCliente_IdClienteAndActivoIsTrue(Integer idCliente);
 
+    List<Mascota> findByActivoTrue();
+
 
 //    Optional<Mascota> findByAliasAndIdCliente_IdClienteAndEstadoIsTrue(String alias, Integer idCliente);
 //

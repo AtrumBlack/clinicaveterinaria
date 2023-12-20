@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Table(name = "cliente")
-@SQLDelete(sql = "UPDATE cliente SET activo = false WHERE id_cliente = ?")
+//@SQLDelete(sql = "UPDATE cliente SET activo = false WHERE id_cliente = ?")
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

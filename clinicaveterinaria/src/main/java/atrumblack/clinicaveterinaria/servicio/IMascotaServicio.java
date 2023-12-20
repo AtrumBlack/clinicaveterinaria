@@ -29,4 +29,6 @@ public interface IMascotaServicio {
 //    public List<Mascota> listarMascotasxIdCliente(Integer idCliente);
 
 //    public Integer obtenerIdMascotaPorAlia(String aliaMascota, Integer idCliente);
+
+    public List<Mascota> listarMascota();
 }

@@ -18,61 +18,13 @@ public class ClienteServicio implements IClienteServicio{
         clienteRepositorio.save(cliente);
 
     }
-
-    @Override
-    public void borrarCliente(Integer dni) {
-
-    }
-
-    @Override
-    public void restablecerCliente(Integer dni) {
-
-    }
-
-
-//    @Override
-//    public void bajaLogica(Integer dni) {
-//        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
-//        clienteOptional.ifPresent(cliente -> {
-//            if (cliente.getEstado()) { // Si el cliente está activo
-//                cliente.setEstado(false);
-//                clienteRepositorio.save(cliente);
-//            }
-//        });
-//    }
-
-//    @Override
-//    public void altaLogica(Integer dni) {
-//        Optional<Cliente> clienteOptional = clienteRepositorio.findByDni(dni);
-//        clienteOptional.ifPresent(cliente -> {
-//            if (!cliente.getEstado()) { // Si el cliente está inactivo
-//                cliente.setEstado(true);
-//                clienteRepositorio.save(cliente);
-//            }
-//        });
-//    }
-//
-//    @Override
-//    public Cliente buscarListaClientexDni(Integer dni) {
-//
-//
-//        Optional<Cliente> clienteOptional = clienteRepositorio.findByDniAndEstadoIsTrue(dni);
-//        return clienteOptional.orElse(null);
-//    }
-//
-//    @Override
-//    public Cliente obtenerClientexId(Integer idCliente) {
-//        return clienteRepositorio.findById(idCliente).orElse(null);
-//    }
-//
     @Override
     public List<Cliente> listarClientes() {
-        return clienteRepositorio.findAll();
-        //return clienteRepositorio.findAll();
+        return clienteRepositorio.findByActivoTrue();
     }
     @Override
     public List<Cliente> buscarClientesPorApellido(String apellido) {
-        return clienteRepositorio.findByApellido(apellido);
+        return clienteRepositorio.findByActivoTrueAndApellido(apellido);
     }
 
     @Override
@@ -82,21 +34,8 @@ public class ClienteServicio implements IClienteServicio{
 
     @Override
     public void eliminarCliente(Cliente cliente) {
-        clienteRepositorio.delete(cliente);
+
+        clienteRepositorio.eliminarCliente(cliente.getIdCliente());
     }
-//
-//    @Override
-//    public List<Cliente> obtenerClientesConMascota() {
-//        return clienteRepositorio.obtenerClientesConMascota();
-//    }
-//
-//    @Override
-//    public List<Cliente> obtenerClientesSinMascota() {
-//        return clienteRepositorio.obtenerClientesSinMascota();
-//    }
-//
-//    @Override
-//    public List<Cliente> listarClientePorEstado(Boolean estado) {
-//        return clienteRepositorio.findByEstado(estado);
-//    }
+
 }

@@ -1,6 +1,8 @@
 package atrumblack.clinicaveterinaria.modelo;
 
 import jakarta.persistence.*;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +19,8 @@ import java.time.LocalDate;
 @ToString
 @Table(name = "mascota")
 public class Mascota implements Serializable {
+
+    private final ObjectProperty<Cliente> clienteProperty = new SimpleObjectProperty<>(this, "cliente");
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mascota")

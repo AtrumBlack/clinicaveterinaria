@@ -29,28 +29,12 @@ public class MascotaServicio implements IMascotaServicio{
         return mascotaRepositorio.findByCliente_IdClienteAndActivoIsTrue(idCliente);
     }
 
+    @Override
+    public List<Mascota> listarMascota() {
+        return mascotaRepositorio.findByActivoTrue();
+    }
 
-//    @Override
-//    public void bajaLogica(Integer id) {
-//        Optional<Mascota> mascotaOptional = mascotaRepositorio.findById(id);
-//        mascotaOptional.ifPresent(mascota -> {
-//            if (mascota.getEstado()) { // Si la mascota está activa
-//                mascota.setEstado(false);
-//                mascotaRepositorio.save(mascota);
-//            }
-//        });
-//    }
 
-//    @Override
-//    public void altaLogica(Integer id) {
-//        Optional<Mascota> mascotaOptional = mascotaRepositorio.findById(id);
-//        mascotaOptional.ifPresent(mascota -> {
-//            if (!mascota.getEstado()) { // Si la mascota está inactiva
-//                mascota.setEstado(true);
-//                mascotaRepositorio.save(mascota);
-//            }
-//        });
-//    }
 //
 //    @Override
 //    public long  contarTotalRegistros() {
