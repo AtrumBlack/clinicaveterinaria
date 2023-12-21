@@ -83,7 +83,7 @@
                   <Image url="@../images/icons8-búsqueda-52.png" />
                </image>
             </ImageView>
-            <TableView fx:id="mascota_tabla" layoutX="11.2" layoutY="62.0" onMouseClicked="#cargarMascotaFormulario" prefHeight="246.0" prefWidth="815.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="19.0">
+            <TableView fx:id="mascota_tabla" layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="815.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="19.0">
                <columns>
                   <TableColumn fx:id="mascota_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
                   <TableColumn fx:id="mascota_col_alias" prefWidth="76.80001449584961" text="Alias" />
