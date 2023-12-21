@@ -6,6 +6,7 @@ import atrumblack.clinicaveterinaria.modelo.Mascota;
 import atrumblack.clinicaveterinaria.servicio.MascotaServicio;
 import com.jfoenix.controls.JFXButton;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -109,14 +110,6 @@ public class MascotaFormControlador extends FormularioControlador{
     private final ObservableList<Mascota> mascotaList =
             FXCollections.observableArrayList();
 
-    private static ObservableValue<String> call(TableColumn.CellDataFeatures<Mascota, String> cellData) {
-        Cliente cliente = cellData.getValue().getCliente();
-        if (cliente != null) {
-            return new SimpleStringProperty(cliente.getNombreCompleto()); // Cambia "getNombreCompleto()" por el método adecuado de tu clase Cliente
-        } else {
-            return new SimpleStringProperty("");
-        }
-    }
 
     private void configurarColumnasMascota() {
 
@@ -128,10 +121,23 @@ public class MascotaFormControlador extends FormularioControlador{
         mascota_col_fecha_nacimiento.setCellValueFactory(new PropertyValueFactory<>("fechaNacimiento"));
         mascota_col_peso_actual.setCellValueFactory(new PropertyValueFactory<>("pesoActual"));
 
-//       mascota_col_cliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
-//        mascota_col_cliente.setCellFactory(column -> new ClienteTableCell());
-        
-        mascota_col_cliente.setCellValueFactory(MascotaFormControlador::call);
+        mascota_col_cliente.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+
+        mascota_col_cliente.setCellFactory(column -> {
+            return new TableCell<Mascota, Cliente>() {
+                @Override
+                protected void updateItem(Cliente cliente, boolean empty) {
+                    super.updateItem(cliente, empty);
+                    if (empty || cliente == null) {
+                        setText(null);
+                    } else {
+                        setText(cliente.getApellido()+", "+cliente.getNombre()); // Reemplaza "getNombre()" con el método correcto para obtener el nombre del cliente
+                    }
+                }
+            };
+        });
+
+
         mascota_col_peso_promedio.setCellValueFactory(new PropertyValueFactory<>("pesoPromedio"));
         mascota_col_sexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
         mascota_col_raza.setCellValueFactory(new PropertyValueFactory<>("raza"));
