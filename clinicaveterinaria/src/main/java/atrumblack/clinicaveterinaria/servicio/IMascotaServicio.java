@@ -1,5 +1,6 @@
 package atrumblack.clinicaveterinaria.servicio;
 
+import atrumblack.clinicaveterinaria.modelo.Cliente;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
 
 import java.util.List;
@@ -7,10 +8,7 @@ import java.util.List;
 public interface IMascotaServicio {
     public void guardarMascota(Mascota mascota);
     public List<Mascota> listarMascotaPorCliente(Integer idCliente);
-//
-////    public void bajaLogica(Integer dni);
-////
-////    public void altaLogica(Integer dni);
+    public void eliminarMascota(Mascota mascota);
 //
 //    public long contarTotalRegistros();
 //

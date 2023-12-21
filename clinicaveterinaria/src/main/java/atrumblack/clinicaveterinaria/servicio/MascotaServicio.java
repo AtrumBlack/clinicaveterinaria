@@ -30,6 +30,11 @@ public class MascotaServicio implements IMascotaServicio{
     }
 
     @Override
+    public void eliminarMascota(Mascota mascota) {
+        mascotaRepositorio.eliminarMascota(mascota.getIdMascota());
+    }
+
+    @Override
     public List<Mascota> listarMascota() {
         return mascotaRepositorio.findByActivoTrue();
     }

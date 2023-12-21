@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,6 +26,7 @@ public class MascotaFormControlador extends FormularioControlador {
     private static final Logger logger =
             LoggerFactory.getLogger(MascotaFormControlador.class);
     private Integer idMascotaInterno;
+    private Cliente clienteInterno;
     @Autowired
     private MascotaServicio mascotaServicio;
 
@@ -181,6 +183,7 @@ public class MascotaFormControlador extends FormularioControlador {
         var mascota = mascota_tabla.getSelectionModel().getSelectedItem();
         if (mascota != null) {
             idMascotaInterno = mascota.getIdMascota();
+            clienteInterno=mascota.getCliente();
             mascota_text_alias.setText(mascota.getAlias());
             mascota_text_especie.setText(mascota.getEspecie());
             mascota_text_color_de_pelo.setText(mascota.getColorDePelo());
@@ -198,6 +201,7 @@ public class MascotaFormControlador extends FormularioControlador {
 
     public void limpiarFormulario() {
         idMascotaInterno = null;
+        clienteInterno=null;
         mascota_text_alias.clear();
         mascota_text_especie.clear();
         mascota_text_color_de_pelo.clear();
@@ -211,5 +215,78 @@ public class MascotaFormControlador extends FormularioControlador {
         mascota_text_raza.clear();
 
         initialize();
+    }
+
+    public void modificarMascota() {
+        if (idMascotaInterno == null) {
+            mostrarMensaje("Informacion", "Debe seleccionar una Mascota");
+            return;
+        }
+        if (mascota_text_alias.getText().isEmpty()) {
+            mostrarMensaje("Error Validacion", "Debe proporcionar un Alias");
+            mascota_text_alias.requestFocus();
+            return;
+        }
+        var mascota = new Mascota();
+        recolectarDatosFormulario(mascota);
+        mascotaServicio.guardarMascota(mascota);
+        mostrarMensaje("Informacion", "Mascota modificada");
+        limpiarFormulario();
+        listarMoscota();
+    }
+    public void eliminarMascota() {
+        var mascota = mascota_tabla.getSelectionModel().getSelectedItem();
+        if (mascota != null) {
+            //logger.info("Registro a eliminar: " + cliente.toString());
+            mascotaServicio.eliminarMascota(mascota);
+            mostrarMensaje("Informacion", "Mascota eliminado:" + mascota.getIdMascota());
+            limpiarFormulario();
+            listarMoscota();
+        } else {
+            mostrarMensaje("Error", "No se ha seleccionado ningun Cliente");
+        }
+    }
+    private void recolectarDatosFormulario(Mascota mascota) {
+        // if (idClienteInterno != null) {
+        mascota.setIdMascota(idMascotaInterno);
+        mascota.setCliente(clienteInterno);
+        mascota.setAlias(mascota_text_alias.getText());
+        mascota.setEspecie(mascota_text_especie.getText());
+        mascota.setColorDePelo(mascota_text_color_de_pelo.getText());
+        // Para un Enum en un ComboBox
+        mascota.setSexo(mascota_combo_sexo.getValue());
+
+        // Para un BigDecimal desde un TextField
+        mascota.setPesoActual(obtenerBigDecimalDesdeTextField(mascota_text_peso_actual));
+
+        // Para un BigDecimal desde un TextField
+        mascota.setPesoPromedio(obtenerBigDecimalDesdeTextField(mascota_text_peso_promedio));
+
+
+        // Para una fecha desde un DatePicker
+        mascota.setFechaNacimiento(mascota_text_fecha_nacimiento.getValue());
+
+        mascota.setRaza(mascota_text_raza.getText());
+        mascota.setActivo(true);
+        //  }
+
+    }
+    private void mostrarMensaje(String titulo, String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
+
+// Método para obtener un BigDecimal desde un campo de texto
+    private BigDecimal obtenerBigDecimalDesdeTextField(TextField textField) {
+        try {
+            String pesoString = textField.getText().trim().replace(',', '.');
+            return pesoString.isEmpty() ? null : new BigDecimal(pesoString);
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }
