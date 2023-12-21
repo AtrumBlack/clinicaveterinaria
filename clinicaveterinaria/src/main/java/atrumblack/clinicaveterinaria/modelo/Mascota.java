@@ -20,7 +20,6 @@ import java.time.LocalDate;
 @Table(name = "mascota")
 public class Mascota implements Serializable {
 
-   // private final ObjectProperty<Cliente> clienteProperty = new SimpleObjectProperty<>(this, "cliente");
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mascota")

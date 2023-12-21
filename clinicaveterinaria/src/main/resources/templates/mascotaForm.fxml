@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mascota_form" prefHeight="580.0" prefWidth="975.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.MascotaFormControlador">
+<AnchorPane fx:id="mascota_form" prefHeight="580.0" prefWidth="900.0" styleClass="shadow" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atrumblack.clinicaveterinaria.controlador.MascotaFormControlador">
    <effect>
       <Shadow>
          <color>
@@ -24,80 +24,80 @@
       </Shadow>
    </effect>
    <children>
-      <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="550.0" prefWidth="943.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="15.0">
+      <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="550.0" prefWidth="836.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <children>
-            <Label layoutX="51.0" layoutY="352.1999999999999" text="Alias:" AnchorPane.bottomAnchor="179.8" />
-            <TextField fx:id="mascota_text_alias" layoutX="89.0" layoutY="338.19999999999993" promptText="Alias" styleClass="jfx-text-field" AnchorPane.bottomAnchor="185.0" />
-            <Label layoutX="33.0" layoutY="399.0" text="Especie:" AnchorPane.topAnchor="399.0" />
-            <TextField fx:id="mascota_text_especie" layoutX="86.0" layoutY="385.4" promptText="Especie" styleClass="jfx-text-field" AnchorPane.topAnchor="385.4" />
-            <Label layoutX="252.0" layoutY="351.0" text="Color de Pelo:" AnchorPane.bottomAnchor="182.99999999999991" />
-            <TextField fx:id="mascota_text_color_de_pelo" layoutX="336.0" layoutY="335.19999999999993" promptText="Color de Pelo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="188.0" />
-            <Label layoutX="299.0" layoutY="399.0" text="Raza:" AnchorPane.topAnchor="399.0" />
-            <TextField fx:id="mascota_text_raza" layoutX="337.0" layoutY="385.4" promptText="Raza" styleClass="jfx-text-field" AnchorPane.topAnchor="385.4" />
-            <Label layoutX="536.0" layoutY="352.1999999999999" text="Fecha de Nacimiento:" AnchorPane.bottomAnchor="179.8" />
-            <Label layoutX="10.0" layoutY="444.0" text="Peso Actual:" AnchorPane.topAnchor="450.0" />
-            <TextField fx:id="mascota_text_peso_actual" layoutX="85.0" layoutY="436.0" promptText="Peso Actual" styleClass="jfx-text-field" AnchorPane.topAnchor="436.0" />
-            <Label layoutX="245.0" layoutY="450.0" text="Peso Promedio:" AnchorPane.topAnchor="450.0" />
-            <TextField fx:id="mascota_text_peso_promedio" layoutX="338.0" layoutY="436.0" promptText="Peso Promedio" styleClass="jfx-text-field" AnchorPane.topAnchor="436.0" />
+            <Label layoutX="47.0" layoutY="369.9999999999999" text="Alias:" AnchorPane.bottomAnchor="162.0" />
+            <TextField fx:id="mascota_text_alias" layoutX="85.0" layoutY="357.19999999999993" promptText="Alias" styleClass="jfx-text-field" AnchorPane.bottomAnchor="166.0" />
+            <Label layoutX="31.0" layoutY="425.6" text="Especie:" AnchorPane.topAnchor="425.6" />
+            <TextField fx:id="mascota_text_especie" layoutX="84.0" layoutY="412.0" promptText="Especie" styleClass="jfx-text-field" AnchorPane.topAnchor="412.0" />
+            <Label layoutX="262.0" layoutY="368.39999999999986" text="Color de Pelo:" AnchorPane.bottomAnchor="163.60000000000002" />
+            <TextField fx:id="mascota_text_color_de_pelo" layoutX="346.0" layoutY="355.5999999999999" promptText="Color de Pelo" styleClass="jfx-text-field" AnchorPane.bottomAnchor="167.60000000000002" />
+            <Label layoutX="309.0" layoutY="428.6" text="Raza:" AnchorPane.topAnchor="428.6" />
+            <TextField fx:id="mascota_text_raza" layoutX="347.0" layoutY="415.0" promptText="Raza" styleClass="jfx-text-field" AnchorPane.topAnchor="415.0" />
+            <Label layoutX="528.0" layoutY="383.5999999999999" text="Fecha de Nacimiento:" AnchorPane.bottomAnchor="148.39999999999998" />
+            <Label layoutX="10.0" layoutY="460.4" text="Peso Actual:" AnchorPane.topAnchor="460.4" />
+            <TextField fx:id="mascota_text_peso_actual" layoutX="85.0" layoutY="446.0" promptText="Peso Actual" styleClass="jfx-text-field" AnchorPane.topAnchor="446.0" />
+            <Label layoutX="255.0" layoutY="460.4" text="Peso Promedio:" AnchorPane.topAnchor="460.4" />
+            <TextField fx:id="mascota_text_peso_promedio" layoutX="348.0" layoutY="446.0" promptText="Peso Promedio" styleClass="jfx-text-field" AnchorPane.topAnchor="446.0" />
             <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="306.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
                <image>
                   <Image url="@../images/icons8-añadir-50.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="mascota_btn_modificar" layoutX="424.0" layoutY="507.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.0" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="428.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+            <JFXButton fx:id="mascota_btn_modificar" layoutX="344.0" layoutY="507.9999999999999" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="7.2000000000000455" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="348.0" layoutY="514.9999999999999" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.600000000000023">
                <image>
                   <Image url="@../images/icons8-editar-propiedad-50.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="mascota_btn_limpiar" layoutX="563.0" layoutY="508.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.0" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="566.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+            <JFXButton fx:id="mascota_btn_limpiar" layoutX="483.0" layoutY="507.9999999999999" onAction="#limpiarFormulario" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="7.2000000000000455" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="486.0" layoutY="510.9999999999999" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.600000000000023">
                <image>
                   <Image url="@../images/icons8-clean-up-64.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="mascota_btn_eliminar" layoutX="739.0" layoutY="507.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.0" />
-            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="743.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0">
+            <JFXButton fx:id="mascota_btn_eliminar" layoutX="659.0" layoutY="507.9999999999999" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="7.2000000000000455" />
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="663.0" layoutY="512.5999999999999" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="12.0">
                <image>
                   <Image url="@../images/icons8-basura-llena-24.png" />
                </image>
             </ImageView>
-            <DatePicker fx:id="mascota_text_fecha_nacimiento" editable="false" layoutX="656.0" layoutY="348.0" promptText="Fecha de Nacimiento" styleClass="date-picker" />
-            <Label layoutX="519.0" layoutY="398.0" text="Sexo:" />
-            <ComboBox fx:id="mascota_combo_sexo" layoutX="563.0" layoutY="394.0" prefWidth="150.0" styleClass="jfx-combo-box" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="319.0" prefWidth="910.0">
-         <styleClass>
-            <String fx:value="shadow" />
-            <String fx:value="white-bg" />
-         </styleClass>
-         <children>
-            <TextField fx:id="mascota_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icons8-búsqueda-52.png" />
-               </image>
-            </ImageView>
-            <TableView fx:id="mascota_tabla" layoutX="11.2" layoutY="62.0" prefHeight="246.0" prefWidth="815.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="19.0">
-               <columns>
-                  <TableColumn fx:id="mascota_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
-                  <TableColumn fx:id="mascota_col_alias" prefWidth="76.80001449584961" text="Alias" />
-                  <TableColumn fx:id="mascota_col_cliente" prefWidth="152.0000457763672" text="Cliente" />
-                  <TableColumn fx:id="mascota_col_especie" prefWidth="82.39994812011719" text="Especie" />
-                  <TableColumn fx:id="mascota_col_color_de_pelo" prefWidth="81.60003662109375" text="Color de Pelo" />
-                  <TableColumn fx:id="mascota_col_fecha_nacimiento" prefWidth="99.199951171875" text="Fecha de Naciemiento" />
-                  <TableColumn fx:id="mascota_col_peso_actual" prefWidth="70.4000244140625" text="Peso Actual" />
-                  <TableColumn fx:id="mascota_col_peso_promedio" prefWidth="111.199951171875" text="Peso Promedio" />
-                  <TableColumn fx:id="mascota_col_sexo" prefWidth="90.40008544921875" text="Sexo" />
-                  <TableColumn fx:id="mascota_col_raza" prefWidth="85.5999755859375" text="Raza" />
-               </columns>
-            </TableView>
-            <Label layoutX="800.0" text="Mascota" />
+            <DatePicker fx:id="mascota_text_fecha_nacimiento" editable="false" layoutX="648.0" layoutY="381.0" promptText="Fecha de Nacimiento" styleClass="date-picker" />
+            <Label layoutX="592.0" layoutY="455.0" text="Sexo:" />
+            <ComboBox fx:id="mascota_combo_sexo" layoutX="636.0" layoutY="451.0" prefWidth="150.0" styleClass="jfx-combo-box" />
+            <AnchorPane prefHeight="341.0" prefWidth="849.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <TextField fx:id="mascota_text_buscar_alias" layoutX="22.0" layoutY="9.0" promptText="Buscar" styleClass="search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="25.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-búsqueda-52.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="mascota_tabla" layoutX="11.2" layoutY="62.0" onMouseClicked="#cargarMascotaFormulario" prefHeight="259.0" prefWidth="818.0" styleClass="table-row-cell" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="20.0">
+                     <columns>
+                        <TableColumn fx:id="mascota_col_id" prefWidth="19.999983966350555" resizable="false" text="Id" />
+                        <TableColumn fx:id="mascota_col_alias" prefWidth="72.79998779296875" text="Alias" />
+                        <TableColumn fx:id="mascota_col_cliente" prefWidth="129.59998321533203" text="Cliente" />
+                        <TableColumn fx:id="mascota_col_especie" prefWidth="84.00003051757812" text="Especie" />
+                        <TableColumn fx:id="mascota_col_color_de_pelo" prefWidth="90.39996337890625" text="Color de Pelo" />
+                        <TableColumn fx:id="mascota_col_fecha_nacimiento" prefWidth="146.4000244140625" text="Fecha de Naciemiento" />
+                        <TableColumn fx:id="mascota_col_peso_actual" prefWidth="81.5999755859375" text="Peso Actual" />
+                        <TableColumn fx:id="mascota_col_peso_promedio" prefWidth="70.4000244140625" text="Peso Prom." />
+                        <TableColumn fx:id="mascota_col_sexo" prefWidth="47.9998779296875" text="Sexo" />
+                        <TableColumn fx:id="mascota_col_raza" prefWidth="136.800048828125" text="Raza" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="770.0" layoutY="-11.0" text="Mascota" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

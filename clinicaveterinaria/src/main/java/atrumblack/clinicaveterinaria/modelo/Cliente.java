@@ -59,8 +59,5 @@ public class Cliente implements Serializable {
         mascotas.add(mascota);
         mascota.setCliente(this);
     }
-    // Método para obtener el nombre completo del cliente
-    public String getNombreCompleto() {
-        return nombre + " " + apellido;
-    }
+
 }

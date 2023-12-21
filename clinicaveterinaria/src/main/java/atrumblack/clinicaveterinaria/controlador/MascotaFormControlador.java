@@ -1,15 +1,9 @@
 package atrumblack.clinicaveterinaria.controlador;
 
 import atrumblack.clinicaveterinaria.modelo.Cliente;
-import atrumblack.clinicaveterinaria.modelo.ClienteTableCell;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
 import atrumblack.clinicaveterinaria.servicio.MascotaServicio;
 import com.jfoenix.controls.JFXButton;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class MascotaFormControlador extends FormularioControlador{
+public class MascotaFormControlador extends FormularioControlador {
 
     private static final Logger logger =
             LoggerFactory.getLogger(MascotaFormControlador.class);
@@ -131,7 +125,7 @@ public class MascotaFormControlador extends FormularioControlador{
                     if (empty || cliente == null) {
                         setText(null);
                     } else {
-                        setText(cliente.getApellido()+", "+cliente.getNombre()); // Reemplaza "getNombre()" con el método correcto para obtener el nombre del cliente
+                        setText(cliente.getApellido() + ", " + cliente.getNombre()); // Reemplaza "getApellido + getNombre()" con el método correcto para obtener el nombre del cliente
                     }
                 }
             };
@@ -143,6 +137,7 @@ public class MascotaFormControlador extends FormularioControlador{
         mascota_col_raza.setCellValueFactory(new PropertyValueFactory<>("raza"));
 
     }
+
     @FXML
     public void initialize() {
         mascota_tabla.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -153,21 +148,23 @@ public class MascotaFormControlador extends FormularioControlador{
         // Configurar el ComboBox para el campo de Sexo
         mascota_combo_sexo.getItems().setAll(Mascota.Sexo.values());
 
-//        // Agregar un ChangeListener para manejar la selección de la tabla en tiempo real
-//        mascota_tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue != null) {
-//                idMascotaInterno = newValue.getIdMascota();
-//
-//                cargarMascotaFormulario();
-//            }
-//        });
+        // Agregar un ChangeListener para manejar la selección de la tabla en tiempo real
+        mascota_tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                idMascotaInterno = newValue.getIdMascota();
+
+                cargarMascotaFormulario();
+            }
+        });
     }
+
     private void listarMoscota() {
         logger.info("Ejecutando listado de mascota por cliente");
         mascotaList.clear();
         mascotaList.addAll(mascotaServicio.listarMascota());
         mascota_tabla.setItems(mascotaList);
     }
+
     private void configurarListeners() {
         // Configurar el Listener para la búsqueda en tiempo real mientras se escribe
         mascota_text_buscar_alias.textProperty().addListener((observable, oldValue, newValue) -> filtrarMascotaPorAlias(newValue));
@@ -180,21 +177,39 @@ public class MascotaFormControlador extends FormularioControlador{
 
         mascota_tabla.setItems(FXCollections.observableArrayList(mascotasFiltrados));
     }
-//    public void cargarMascotaFormulario() {
-//        var mascota = mascota_tabla.getSelectionModel().getSelectedItem();
-//        if (mascota != null) {
-//            idMascotaInterno = mascota.getIdMascota();
-//            mascota_text_especie.setText(mascota.getEspecie());
-//            mascota_text_color_de_pelo.setText(mascota.getColorDePelo());
-//            mascota_combo_sexo.setValue(mascota.getSexo());
-//           // mascota_combo_sexo.setText(mascota.getSexo().name());
-//            mascota_text_peso_actual.setText(mascota.getPesoActual() != null ? mascota.getPesoActual().toString() : "");
-//            mascota_text_peso_promedio.setText(mascota.getPesoPromedio() != null ? mascota.getPesoPromedio().toString() : "");
-//
-//            // Establecer la fecha de nacimiento en el DatePicker
-//            mascota_text_fecha_nacimiento.setValue(mascota.getFechaNacimiento());
-//
-//            mascota_text_raza.setText(mascota.getRaza());
-//        }
-//    }
+    public void cargarMascotaFormulario() {
+        var mascota = mascota_tabla.getSelectionModel().getSelectedItem();
+        if (mascota != null) {
+            idMascotaInterno = mascota.getIdMascota();
+            mascota_text_alias.setText(mascota.getAlias());
+            mascota_text_especie.setText(mascota.getEspecie());
+            mascota_text_color_de_pelo.setText(mascota.getColorDePelo());
+            mascota_combo_sexo.setValue(mascota.getSexo());
+
+            mascota_text_peso_actual.setText(mascota.getPesoActual() != null ? mascota.getPesoActual().toString() : "");
+            mascota_text_peso_promedio.setText(mascota.getPesoPromedio() != null ? mascota.getPesoPromedio().toString() : "");
+
+            // Establecer la fecha de nacimiento en el DatePicker
+            mascota_text_fecha_nacimiento.setValue(mascota.getFechaNacimiento());
+
+            mascota_text_raza.setText(mascota.getRaza());
+        }
+    }
+
+    public void limpiarFormulario() {
+        idMascotaInterno = null;
+        mascota_text_alias.clear();
+        mascota_text_especie.clear();
+        mascota_text_color_de_pelo.clear();
+
+        mascota_combo_sexo.getSelectionModel().clearSelection();
+        mascota_text_peso_actual.clear();
+        mascota_text_peso_promedio.clear();
+        mascota_text_fecha_nacimiento.setValue(null);
+        // Limpiar la tabla cliente_tabla
+        mascota_tabla.getItems().clear();
+        mascota_text_raza.clear();
+
+        initialize();
+    }
 }
