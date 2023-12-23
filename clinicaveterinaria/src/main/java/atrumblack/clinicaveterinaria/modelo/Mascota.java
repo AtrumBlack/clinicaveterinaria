@@ -36,8 +36,13 @@ public class Mascota implements Serializable {
     @Column(name = "sexo", nullable = true, length = 1)
     private Sexo sexo;
 
-    @Column(name = "especie", nullable = true, length = 75)
-    private String especie; // Especie de la mascota (por ejemplo, perro, gato, etc.)
+//    @Column(name = "especie", nullable = true, length = 75)
+//    private String especie; // Especie de la mascota (por ejemplo, perro, gato, etc.)
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_mascota", nullable = true) // Nombre de la columna de clave foránea en la tabla "mascotas"
+    private TipoMascota tipoMascota; // Tipo de mascota
+
     @Column(name = "raza", nullable = true, length = 75)
     private String raza; // Raza de la mascota
 
@@ -48,7 +53,7 @@ public class Mascota implements Serializable {
     @Column(name = "edad", nullable = true)
     private Integer edad; // edad de la mascota
 
-    @Column(name = "microchip", nullable = true)
+    @Column(name = "microchip", nullable = true, length = 50)
     private String microchip;
 
     @Column(name = "peso_actual", nullable = true, precision = 5, scale = 2)
