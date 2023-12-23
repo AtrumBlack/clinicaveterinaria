@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -17,25 +14,25 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "vacuna")
-public class Vacuna implements Serializable {
+@Table(name = "desparasitacion")
+public class Desparasitacion  implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_vacuna")
-    private Integer idVacuna;
-
-    @Column(name = "nombre", nullable = false, length = 50)
-    private String nombre; // Nombre de la vacuna
+    @Column(name = "id_desparasitacion")
+    private Integer idDesparasitacion;
+    @Column(name = "tipo", nullable = false, length = 50)
+    private String tipo;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "fecha_aplicacion", nullable = true)
-    private LocalDate fechaAplicacion; // Fecha en que se aplicó la vacuna
+    @Column(name = "fecha", nullable = true)
+    private LocalDate fecha; // Fecha de la desaparasitacion
 
     @Column(name = "observaciones", nullable = true, length = 50)
     private String observaciones;
 
     // Relación muchos a uno con HistorialClinico
     @ManyToOne
-    @JoinColumn(name = "id_historia_clinica")
+    @JoinColumn(name = "historial_clinico_id")
     private HistoriaClinica historiaClinica;
 }

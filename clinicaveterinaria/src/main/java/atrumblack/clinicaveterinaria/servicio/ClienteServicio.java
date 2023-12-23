@@ -39,4 +39,9 @@ public class ClienteServicio implements IClienteServicio{
         clienteRepositorio.eliminarCliente(cliente.getIdCliente());
     }
 
+    @Override
+    public Cliente obtenerClientePorId(Integer idClienteInterno) {
+        return null;
+    }
+
 }

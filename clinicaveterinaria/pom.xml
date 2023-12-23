@@ -54,8 +54,13 @@
 			<artifactId>fontawesomefx-commons</artifactId>
 			<version>9.1.2</version>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>6.1.1</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>

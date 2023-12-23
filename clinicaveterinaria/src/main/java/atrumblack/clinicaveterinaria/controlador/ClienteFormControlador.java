@@ -2,9 +2,10 @@ package atrumblack.clinicaveterinaria.controlador;
 
 import atrumblack.clinicaveterinaria.modelo.Cliente;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
+import atrumblack.clinicaveterinaria.repositorio.ClienteRepositorio;
 import atrumblack.clinicaveterinaria.servicio.ClienteServicio;
 import atrumblack.clinicaveterinaria.servicio.MascotaServicio;
-import com.jfoenix.controls.JFXButton;
+//import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +16,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -93,18 +101,19 @@ public class ClienteFormControlador extends FormularioControlador {
 
     //Botones
     @FXML
-    private JFXButton cliente_btn_agregar;
+    private Button cliente_btn_agregar;
     @FXML
-    private JFXButton cliente_btn_eliminar;
+    private Button cliente_btn_eliminar;
     @FXML
-    private JFXButton cliente_btn_limpiar;
+    private Button cliente_btn_limpiar;
     @FXML
-    private JFXButton cliente_btn_modificar;
+    private Button cliente_btn_modificar;
 
     //Boton Agregar Mascota
     @FXML
-    private JFXButton cliente_btn_agregar_mascota;
-
+    private Button cliente_btn_agregar_mascota;
+    @Autowired
+    private ClienteRepositorio clienteRepositorio;
     private final ObservableList<Cliente> clienteList =
             FXCollections.observableArrayList();
     private final ObservableList<Mascota> mascotaList =

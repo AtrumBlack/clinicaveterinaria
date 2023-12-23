@@ -5,7 +5,7 @@ import atrumblack.clinicaveterinaria.modelo.Mascota;
 import atrumblack.clinicaveterinaria.modelo.Tratamiento;
 import atrumblack.clinicaveterinaria.servicio.ClienteServicio;
 import atrumblack.clinicaveterinaria.servicio.TratamientoServicio;
-import com.jfoenix.controls.JFXButton;
+//import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,17 +33,17 @@ public class TratamientoFormControlador extends FormularioControlador {
     private Integer idTratamientoInterno;
     @FXML
     private AnchorPane tratamiento_form;
-    @FXML
-    private JFXButton tratamiento_btn_agregar;
-
-    @FXML
-    private JFXButton tratamiento_btn_eliminar;
-
-    @FXML
-    private JFXButton tratamiento_btn_limpiar;
-
-    @FXML
-    private JFXButton tratamiento_btn_modificar;
+    //@FXML
+//    private JFXButton tratamiento_btn_agregar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_eliminar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_limpiar;
+//
+//    @FXML
+//    private JFXButton tratamiento_btn_modificar;
 
     @FXML
     private TableView<Tratamiento> tratamiento_tabla;

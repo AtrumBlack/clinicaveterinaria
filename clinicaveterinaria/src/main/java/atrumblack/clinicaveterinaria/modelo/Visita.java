@@ -30,7 +30,7 @@ public class Visita implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_historial_medico")
-    private HistorialMedico historialMedico;
+    private HistoriaClinica historialMedico;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_visita", nullable = false)

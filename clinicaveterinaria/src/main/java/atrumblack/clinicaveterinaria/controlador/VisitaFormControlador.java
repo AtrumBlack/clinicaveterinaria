@@ -1,7 +1,8 @@
 package atrumblack.clinicaveterinaria.controlador;
 
-import com.jfoenix.controls.JFXButton;
+//import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -13,22 +14,22 @@ public class VisitaFormControlador extends FormularioControlador{
     @FXML
     private AnchorPane visitas_form;
     @FXML
-    private JFXButton visitas_btn_agregar;
+    private Button visitas_btn_agregar;
 
     @FXML
-    private JFXButton visitas_btn_agregar_tratamiento;
+    private Button visitas_btn_agregar_tratamiento;
 
     @FXML
-    private JFXButton visitas_btn_eliminar;
+    private Button visitas_btn_eliminar;
 
     @FXML
-    private JFXButton visitas_btn_eliminar_tratamiento;
+    private Button visitas_btn_eliminar_tratamiento;
 
     @FXML
-    private JFXButton visitas_btn_limpiar;
+    private Button visitas_btn_limpiar;
 
     @FXML
-    private JFXButton visitas_btn_modificar;
+    private Button visitas_btn_modificar;
 
     @FXML
     private TableColumn<?, ?> visitas_col_alias;

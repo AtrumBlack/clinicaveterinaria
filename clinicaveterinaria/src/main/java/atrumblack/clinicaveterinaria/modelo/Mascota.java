@@ -44,12 +44,12 @@ public class Mascota implements Serializable {
     @Column(name = "color_de_pelo", nullable = true, length = 50)
     private String colorDePelo; // Color del pelaje de la mascota
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "fecha_nacimiento", nullable = true)
-    private LocalDate fechaNacimiento; // Fecha de nacimiento de la mascota
+    //@Temporal(TemporalType.DATE)
+    @Column(name = "edad", nullable = true)
+    private Integer edad; // edad de la mascota
 
-    @Column(name = "peso_promedio", nullable = true, precision = 5, scale = 2)
-    private BigDecimal pesoPromedio;
+    @Column(name = "microchip", nullable = true)
+    private String microchip;
 
     @Column(name = "peso_actual", nullable = true, precision = 5, scale = 2)
     private BigDecimal pesoActual;

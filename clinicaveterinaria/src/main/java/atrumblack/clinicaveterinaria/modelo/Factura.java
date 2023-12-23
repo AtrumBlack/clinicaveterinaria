@@ -9,6 +9,7 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -45,4 +46,6 @@ public class Factura implements Serializable {
 
     @Column(name = "facturado_tratamiento", nullable = false)
     private Boolean facturadoTratamiento;
+
+    private List<FacturaItem> items;
 }

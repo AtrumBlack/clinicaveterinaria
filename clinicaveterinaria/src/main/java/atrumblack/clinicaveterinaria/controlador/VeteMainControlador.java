@@ -1,7 +1,5 @@
 package atrumblack.clinicaveterinaria.controlador;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 
 import java.net.URL;
 import java.util.*;
@@ -39,39 +37,47 @@ public class VeteMainControlador implements Initializable {
     @FXML
     private AnchorPane main_form;
     @FXML
-    private AnchorPane tratamiento_form;
-    @FXML
     private AnchorPane turnos_form;
     @FXML
     private AnchorPane visitas_form;
 
     //Formulario Principal - Main
     @FXML
-    private JFXButton main_btn_cliente;
+    private Button main_btn_cliente;
 
     @FXML
-    private JFXButton main_btn_facturacion;
+    private Button main_btn_facturacion;
 
     @FXML
-    private JFXButton main_btn_historia_clinica;
+    private Button main_btn_historia_clinica;
 
     @FXML
-    private JFXButton main_btn_inicio;
+    private Button main_btn_mascota;
 
     @FXML
-    private JFXButton main_btn_mascota;
+    private Button main_btn_reserva_turno;
 
     @FXML
-    private JFXButton main_btn_reserva_turno;
+    private Button main_btn_visita;
 
     @FXML
-    private JFXButton main_btn_salir;
+    private Button main_btn_servicio;
 
     @FXML
-    private JFXButton main_btn_tratamiento;
+    private Button main_btn_producto;
 
     @FXML
-    private JFXButton main_btn_visita;
+    private Button main_btn_reserva_proveedor;
+
+    @FXML
+    private Button main_btn_impuesto;
+
+    @FXML
+    private Button main_btn_cerrar;
+
+    @FXML
+    private Button main_btn_permiso;
+
 
     //-----------------------------------------------------------------------------
 
@@ -114,7 +120,7 @@ public class VeteMainControlador implements Initializable {
         try {
             if (option.get().equals(ButtonType.OK)) {
 
-                main_btn_salir.getScene().getWindow().hide();
+                main_btn_cerrar.getScene().getWindow().hide();
                 //clinicaveterinaria/src/main/resources/templates
                 Parent root = FXMLLoader.load(getClass().getResource("/templates/logIn.fxml"));
                 Stage stage = new Stage();
@@ -160,14 +166,14 @@ public class VeteMainControlador implements Initializable {
         // Inicializar el mapa de botones y formularios
         buttonToFormMap.put(main_btn_cliente, cliente_form);
         buttonToFormMap.put(main_btn_mascota, mascota_form);
-        buttonToFormMap.put(main_btn_tratamiento, tratamiento_form);
+       // buttonToFormMap.put(main_btn_tratamiento, tratamiento_form);
         buttonToFormMap.put(main_btn_visita, visitas_form);
         buttonToFormMap.put(main_btn_historia_clinica, historia_clinica_form);
         buttonToFormMap.put(main_btn_reserva_turno, turnos_form);
         buttonToFormMap.put(main_btn_facturacion, factura_form);
 
-        // Seleccionar "Inicio" y aplicar el estilo
-        selectedButton = main_btn_inicio;
+//        // Seleccionar "Inicio" y aplicar el estilo
+//        selectedButton = main_btn_inicio;
         selectedButton.setStyle("-fx-background-color: rgba(39, 43, 63, 0.7);");
 
         // Mostrar el formulario asociado al botón "Inicio"

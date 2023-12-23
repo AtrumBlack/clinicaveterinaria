@@ -3,7 +3,7 @@ package atrumblack.clinicaveterinaria.controlador;
 import atrumblack.clinicaveterinaria.modelo.Cliente;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
 import atrumblack.clinicaveterinaria.servicio.MascotaServicio;
-import com.jfoenix.controls.JFXButton;
+//import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -65,13 +65,13 @@ public class MascotaFormControlador extends FormularioControlador {
     private ComboBox<Mascota.Sexo> mascota_combo_sexo;
 
     @FXML
-    private JFXButton mascota_btn_eliminar;
+    private Button mascota_btn_eliminar;
 
     @FXML
-    private JFXButton mascota_btn_limpiar;
+    private Button mascota_btn_limpiar;
 
     @FXML
-    private JFXButton mascota_btn_modificar;
+    private Button mascota_btn_modificar;
 
     //Tabla Mascota
 

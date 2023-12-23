@@ -41,6 +41,6 @@ public class VisitasTratamiento implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_historial_medico")
-    private HistorialMedico historialMedico;
+    private HistoriaClinica historialMedico;
 
 }

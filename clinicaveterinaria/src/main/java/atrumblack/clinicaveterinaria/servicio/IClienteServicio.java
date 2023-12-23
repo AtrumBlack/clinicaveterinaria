@@ -13,6 +13,5 @@ public interface IClienteServicio {
     public void eliminarCliente(Cliente cliente);
 
 
-
-
+    Cliente obtenerClientePorId(Integer idClienteInterno);
 }
