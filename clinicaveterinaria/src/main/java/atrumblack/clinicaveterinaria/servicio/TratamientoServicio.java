@@ -5,10 +5,11 @@ import atrumblack.clinicaveterinaria.modelo.Tratamiento;
 import atrumblack.clinicaveterinaria.repositorio.MascotaRepositorio;
 import atrumblack.clinicaveterinaria.repositorio.TratamientoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class TratamientoServicio implements ITratamientoServicio{
 
     @Autowired
@@ -17,6 +18,11 @@ public class TratamientoServicio implements ITratamientoServicio{
     @Override
     public void guardarTratamiento(Tratamiento tratamiento) {
         tratamientoRepositorio.save(tratamiento);
+    }
+
+    @Override
+    public List<Tratamiento> listarTratamientos() {
+        return tratamientoRepositorio.findByActivoTrue();
     }
 
 //    @Override

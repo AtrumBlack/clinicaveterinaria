@@ -1,5 +1,6 @@
 package atrumblack.clinicaveterinaria.servicio;
 
+import atrumblack.clinicaveterinaria.modelo.Cliente;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
 import atrumblack.clinicaveterinaria.modelo.Tratamiento;
 
@@ -7,6 +8,7 @@ import java.util.List;
 
 public interface ITratamientoServicio {
     public void guardarTratamiento(Tratamiento tratamiento);
+    public List<Tratamiento> listarTratamientos();
 
 //    public void bajaLogica(Integer idTratamiento);
 //

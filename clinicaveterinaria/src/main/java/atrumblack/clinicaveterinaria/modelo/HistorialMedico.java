@@ -28,8 +28,14 @@ public class HistorialMedico implements Serializable {
     private Mascota mascota;
 
     @OneToMany(mappedBy = "historialMedico", cascade = CascadeType.ALL)
-    private List<Visita> visita;
+    private List<VisitasTratamiento> visitasTratamientos;
 
-    @OneToMany(mappedBy = "historialMedico", cascade = CascadeType.ALL)
-    private List<Tratamiento> tratamiento;
+    // Otros campos relevantes para el historial médico
+
+    // Método para agregar una visita con tratamiento al historial médico
+    public void agregarVisitasTratamiento(VisitasTratamiento visitasTratamiento) {
+        this.visitasTratamientos.add(visitasTratamiento);
+        visitasTratamiento.setHistorialMedico(this);
+
+    }
 }

@@ -48,11 +48,9 @@ public class Cliente implements Serializable {
     @Column(name = "alternativa", nullable = true, length = 100)
     private String alternativa; // Nombre del contacto de emergencia del cliente
 
-//    @OneToMany(mappedBy = "visita", cascade = CascadeType.ALL)
-//    private List<Vacuna> vacunas = new ArrayList<>();
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<Mascota> mascotas;
+    private List<Mascota> mascotas = new ArrayList<>();
 
     // Método para agregar una mascota a la lista bidireccional
     public void agregarMascota(Mascota mascota) {

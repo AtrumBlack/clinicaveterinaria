@@ -39,5 +39,8 @@ public class VisitasTratamiento implements Serializable {
     @Column(name = "importe", nullable = true, precision = 5, scale = 2)
     private BigDecimal importe;// es el importe del tratamiento que se le hizo  a la mascota en la visita
 
+    @ManyToOne
+    @JoinColumn(name = "id_historial_medico")
+    private HistorialMedico historialMedico;
 
 }

@@ -250,6 +250,7 @@ public class ClienteFormControlador extends FormularioControlador {
             mostrarMensaje("Informacion", "Debe seleccionar un Cliente");
             return;
         }
+        //Cliente cliente = cliente_tabla.getSelectionModel().getSelectedItem();
         if (cliente_text_alias_mascota.getText().isEmpty()) {
             mostrarMensaje("Error Validacion", "Debes de proporcionar un Alias");
             cliente_text_alias_mascota.requestFocus();
@@ -260,9 +261,20 @@ public class ClienteFormControlador extends FormularioControlador {
             mascota.setIdMascota(null);
             mascotaServicio.guardarMascota(mascota);
             mostrarMensaje("Informacion", "Mascota agregada");
-            //limpiarFormulario();
+            limpiarFormulario();
             limpiarFormularioMascota();
             listarMoscota(idClienteInterno);
+
+//            // Utiliza el método agregarMascota de la entidad Cliente
+//
+//            var mascota = new Mascota();
+//            recolectarDatosFormularioMascota(mascota);
+//            mascota.setIdMascota(null);
+//            cliente.agregarMascota(mascota);
+//            clienteServicio.guardarCliente(cliente);
+//            mostrarMensaje("Informacion", "Mascota agregada");
+//            limpiarFormularioMascota();
+//            listarMoscota(idClienteInterno);
         }
     }
 

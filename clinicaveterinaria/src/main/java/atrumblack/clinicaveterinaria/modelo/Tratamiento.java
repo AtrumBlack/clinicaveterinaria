@@ -24,10 +24,6 @@ public class Tratamiento implements Serializable {
     @Column(name = "tipo", nullable = false, length = 50)
     private String tipo; // Tipo de tratamiento (por ejemplo, cirugía, vacunación, etc.)
 
-    @ManyToOne
-    @JoinColumn(name = "id_historial_medico")
-    private HistorialMedico historialMedico;
-
     @Column(name = "descripcion", nullable = true, length = 200)
     private String descripcion; // Descripción detallada del tratamiento
 
@@ -36,4 +32,6 @@ public class Tratamiento implements Serializable {
 
     @Column(name = "activo", nullable = false)
     private Boolean activo; // Estado de la mascota (activo o inactivo)
+
+
 }

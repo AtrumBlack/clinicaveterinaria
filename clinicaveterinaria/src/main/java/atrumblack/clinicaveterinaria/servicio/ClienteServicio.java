@@ -20,6 +20,7 @@ public class ClienteServicio implements IClienteServicio{
     }
     @Override
     public List<Cliente> listarClientes() {
+
         return clienteRepositorio.findByActivoTrue();
     }
     @Override
