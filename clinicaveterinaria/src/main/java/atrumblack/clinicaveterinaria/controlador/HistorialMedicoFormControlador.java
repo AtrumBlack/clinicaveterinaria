@@ -1,6 +1,6 @@
 package atrumblack.clinicaveterinaria.controlador;
 
-import com.jfoenix.controls.JFXComboBox;
+//import com.jfoenix.controls.JFXComboBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,17 +30,17 @@ public class HistorialMedicoFormControlador extends FormularioControlador{
     @FXML
     private TableColumn<?, ?> historia_clinica_col_id_mascota;
 
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_informacion_general;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_tratamiento;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_vacuna;
-
-    @FXML
-    private JFXComboBox<?> historia_clinica_combo_vistas;
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_informacion_general;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_tratamiento;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_vacuna;
+//
+//    @FXML
+//    private JFXComboBox<?> historia_clinica_combo_vistas;
 
     @FXML
     private TableView<?> historia_clinica_tabla;

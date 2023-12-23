@@ -1,7 +1,8 @@
 package atrumblack.clinicaveterinaria.controlador;
 
-import com.jfoenix.controls.JFXButton;
+//import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -13,16 +14,16 @@ public class FacturaFormControlador extends FormularioControlador {
     @FXML
     private AnchorPane factura_form;
     @FXML
-    private JFXButton factura_btn_agregar;
+    private Button factura_btn_agregar;
 
     @FXML
-    private JFXButton factura_btn_efectivo;
+    private Button factura_btn_efectivo;
 
     @FXML
-    private JFXButton factura_btn_limpiar;
+    private Button factura_btn_limpiar;
 
     @FXML
-    private JFXButton factura_btn_tarjeta;
+    private Button factura_btn_tarjeta;
 
     @FXML
     private TableColumn<?, ?> factura_col_alias;

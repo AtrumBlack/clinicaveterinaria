@@ -185,15 +185,15 @@ public class MascotaFormControlador extends FormularioControlador {
             idMascotaInterno = mascota.getIdMascota();
             clienteInterno=mascota.getCliente();
             mascota_text_alias.setText(mascota.getAlias());
-            mascota_text_especie.setText(mascota.getEspecie());
+            //mascota_text_especie.setText(mascota.getEspecie());
             mascota_text_color_de_pelo.setText(mascota.getColorDePelo());
             mascota_combo_sexo.setValue(mascota.getSexo());
 
             mascota_text_peso_actual.setText(mascota.getPesoActual() != null ? mascota.getPesoActual().toString() : "");
-            mascota_text_peso_promedio.setText(mascota.getPesoPromedio() != null ? mascota.getPesoPromedio().toString() : "");
+            //mascota_text_peso_promedio.setText(mascota.getPesoPromedio() != null ? mascota.getPesoPromedio().toString() : "");
 
             // Establecer la fecha de nacimiento en el DatePicker
-            mascota_text_fecha_nacimiento.setValue(mascota.getFechaNacimiento());
+            //mascota_text_fecha_nacimiento.setValue(mascota.getFechaNacimiento());
 
             mascota_text_raza.setText(mascota.getRaza());
         }
@@ -251,7 +251,7 @@ public class MascotaFormControlador extends FormularioControlador {
         mascota.setIdMascota(idMascotaInterno);
         mascota.setCliente(clienteInterno);
         mascota.setAlias(mascota_text_alias.getText());
-        mascota.setEspecie(mascota_text_especie.getText());
+        //mascota.setEspecie(mascota_text_especie.getText());
         mascota.setColorDePelo(mascota_text_color_de_pelo.getText());
         // Para un Enum en un ComboBox
         mascota.setSexo(mascota_combo_sexo.getValue());
@@ -260,11 +260,11 @@ public class MascotaFormControlador extends FormularioControlador {
         mascota.setPesoActual(obtenerBigDecimalDesdeTextField(mascota_text_peso_actual));
 
         // Para un BigDecimal desde un TextField
-        mascota.setPesoPromedio(obtenerBigDecimalDesdeTextField(mascota_text_peso_promedio));
+        //mascota.setPesoPromedio(obtenerBigDecimalDesdeTextField(mascota_text_peso_promedio));
 
 
         // Para una fecha desde un DatePicker
-        mascota.setFechaNacimiento(mascota_text_fecha_nacimiento.getValue());
+        //mascota.setFechaNacimiento(mascota_text_fecha_nacimiento.getValue());
 
         mascota.setRaza(mascota_text_raza.getText());
         mascota.setActivo(true);

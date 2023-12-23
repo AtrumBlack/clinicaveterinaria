@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -26,12 +26,15 @@
    <children>
       <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="536.0" prefWidth="849.0" styleClass="white-bg" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <children>
-            <JFXButton fx:id="turnos_btn_limpiar" layoutX="693.0" layoutY="509.0" prefHeight="34.0" prefWidth="162.0" styleClass="clear-btn" text="Limpiar Formulario" AnchorPane.bottomAnchor="6.199999999999932" />
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="696.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.599999999999909">
-               <image>
-                  <Image url="@../images/icons8-clean-up-64.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="turnos_btn_limpiar" layoutX="551.0" layoutY="526.0" mnemonicParsing="false" styleClass="clear-btn" text="Limpiar Formulario">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-clean-up-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="24.8" layoutY="55.0" prefHeight="471.0" prefWidth="838.0" AnchorPane.leftAnchor="24.8" AnchorPane.rightAnchor="24.799999999999955">
@@ -54,23 +57,23 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <JFXButton fx:id="turnos_btn_8" layoutX="29.0" layoutY="10.0" styleClass="jfx-button2" text="08:00 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_830" layoutX="132.59999999999997" layoutY="10.0" styleClass="jfx-button2" text="08:30 hs" AnchorPane.rightAnchor="135.0" />
-                        <JFXButton fx:id="turnos_btn_9" layoutX="240.0" layoutY="10.0" styleClass="jfx-button2" text="09:00 hs" AnchorPane.rightAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_930" layoutX="28.0" layoutY="56.0" styleClass="jfx-button2" text="09:30 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_10" layoutX="134.0" layoutY="56.0" styleClass="jfx-button2" text="10:00 hs" AnchorPane.rightAnchor="135.0" />
-                        <JFXButton fx:id="turnos_btn_1030" layoutX="239.0" layoutY="56.0" styleClass="jfx-button2" text="10:30 hs" AnchorPane.rightAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_11" layoutX="29.0" layoutY="103.0" styleClass="jfx-button2" text="11:00 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_1130" layoutX="135.0" layoutY="103.0" styleClass="jfx-button2" text="11:30 hs" AnchorPane.rightAnchor="135.0" />
-                        <JFXButton fx:id="turnos_btn_12" layoutX="240.0" layoutY="103.0" styleClass="jfx-button2" text="12:00 hs" AnchorPane.rightAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_1230" layoutX="28.0" layoutY="149.0" styleClass="jfx-button2" text="12:30 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_13" layoutX="134.0" layoutY="149.0" styleClass="jfx-button2" text="13:00 hs" AnchorPane.rightAnchor="135.0" />
-                        <JFXButton fx:id="turnos_btn_1330" layoutX="239.0" layoutY="149.0" styleClass="jfx-button2" text="13:30 hs" AnchorPane.rightAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_14" layoutX="28.0" layoutY="193.0" styleClass="jfx-button2" text="14:00 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_1430" layoutX="134.0" layoutY="193.0" styleClass="jfx-button2" text="14:30 hs" AnchorPane.rightAnchor="135.0" />
-                        <JFXButton fx:id="turnos_btn_15" layoutX="239.0" layoutY="193.0" styleClass="jfx-button2" text="15:00 hs" AnchorPane.rightAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_1530" layoutX="27.0" layoutY="239.0" styleClass="jfx-button2" text="15:30 hs" AnchorPane.leftAnchor="29.0" />
-                        <JFXButton fx:id="turnos_btn_16" layoutX="133.0" layoutY="239.0" styleClass="jfx-button2" text="16:00 hs" AnchorPane.rightAnchor="135.0" />
+                        <Button fx:id="turnos_btn_8" layoutX="28.0" layoutY="10.0" mnemonicParsing="false" styleClass="jfx-button2" text="08:00 hs" />
+                        <Button fx:id="turnos_btn_830" layoutX="132.0" layoutY="9.0" mnemonicParsing="false" styleClass="jfx-button2" text="08:30 hs" />
+                        <Button fx:id="turnos_btn_9" layoutX="238.0" layoutY="9.0" mnemonicParsing="false" styleClass="jfx-button2" text="09:00 hs" />
+                        <Button fx:id="turnos_btn_930" layoutX="28.0" layoutY="56.0" mnemonicParsing="false" styleClass="jfx-button2" text="09:30 hs" />
+                        <Button fx:id="turnos_btn_10" layoutX="132.0" layoutY="55.0" mnemonicParsing="false" styleClass="jfx-button2" text="10:00 hs" />
+                        <Button fx:id="turnos_btn_1030" layoutX="238.0" layoutY="55.0" mnemonicParsing="false" styleClass="jfx-button2" text="10:30 hs" />
+                        <Button fx:id="turnos_btn_11" layoutX="28.0" layoutY="103.0" mnemonicParsing="false" styleClass="jfx-button2" text="11:00 hs" />
+                        <Button fx:id="turnos_btn_1130" layoutX="132.0" layoutY="102.0" mnemonicParsing="false" styleClass="jfx-button2" text="11:30 hs" />
+                        <Button fx:id="turnos_btn_12" layoutX="238.0" layoutY="102.0" mnemonicParsing="false" styleClass="jfx-button2" text="12:00 hs" />
+                        <Button fx:id="turnos_btn_1230" layoutX="28.0" layoutY="149.0" mnemonicParsing="false" styleClass="jfx-button2" text="12:30 hs" />
+                        <Button fx:id="turnos_btn_13" layoutX="132.0" layoutY="148.0" mnemonicParsing="false" styleClass="jfx-button2" text="13:00 hs" />
+                        <Button fx:id="turnos_btn_1330" layoutX="238.0" layoutY="148.0" mnemonicParsing="false" styleClass="jfx-button2" text="13:30 hs" />
+                        <Button fx:id="turnos_btn_14" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" styleClass="jfx-button2" text="14:00 hs" />
+                        <Button fx:id="turnos_btn_1430" layoutX="132.0" layoutY="194.0" mnemonicParsing="false" styleClass="jfx-button2" text="14:30 hs" />
+                        <Button fx:id="turnos_btn_15" layoutX="238.0" layoutY="194.0" mnemonicParsing="false" styleClass="jfx-button2" text="15:00 hs" />
+                        <Button fx:id="turnos_btn_1530" layoutX="28.0" layoutY="241.0" mnemonicParsing="false" styleClass="jfx-button2" text="15:30 hs" />
+                        <Button fx:id="turnos_btn_16" layoutX="132.0" layoutY="240.0" mnemonicParsing="false" styleClass="jfx-button2" text="16:00 hs" />
                      </children>
                   </AnchorPane>
                </children>
@@ -96,19 +99,16 @@
                         <TableColumn fx:id="turnos_col_cliente" prefWidth="182.39996337890625" text="Cliente" />
                      </columns>
                   </TableView>
-                  <JFXButton fx:id="turnos_btn_agregar" layoutX="14.0" layoutY="390.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Agregar" AnchorPane.bottomAnchor="26.0" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-añadir-50.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="turnos_btn_modificar" layoutX="130.0" layoutY="389.0" prefHeight="34.0" prefWidth="103.0" styleClass="add-btn" text="Modificar" AnchorPane.bottomAnchor="27.0" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="134.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.399999999999977">
                      <image>
                         <Image url="@../images/icons8-editar-propiedad-50.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="turnos_btn_eliminar" layoutX="312.0" layoutY="388.0" prefHeight="34.0" prefWidth="96.0" styleClass="delete-btn" text="Eliminar" AnchorPane.bottomAnchor="28.0" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="316.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="33.39999999999998">
                      <image>
                         <Image url="@../images/icons8-basura-llena-24.png" />
@@ -124,6 +124,33 @@
                         <Image url="@../images/icons8-búsqueda-52.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="turnos_btn_agregar" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" styleClass="add-btn" text="Agregar">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-añadir-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="turnos_btn_modificar" layoutX="123.0" layoutY="379.0" mnemonicParsing="false" styleClass="add-btn" text="Modificar">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-editar-propiedad-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="turnos_btn_eliminar" layoutX="307.0" layoutY="378.0" mnemonicParsing="false" styleClass="delete-btn" text="Eliminar">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-basura-llena-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

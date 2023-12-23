@@ -308,7 +308,7 @@ public class ClienteFormControlador extends FormularioControlador {
         if (idClienteInterno != null) {
             mascota.setCliente(cliente);
             mascota.setAlias(cliente_text_alias_mascota.getText());
-            mascota.setEspecie(cliente_text_especie_mascota.getText());
+            //mascota.setEspecie(cliente_text_especie_mascota.getText());
             mascota.setActivo(true);
         }
 

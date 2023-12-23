@@ -174,7 +174,7 @@ public class VeteMainControlador implements Initializable {
 
 //        // Seleccionar "Inicio" y aplicar el estilo
 //        selectedButton = main_btn_inicio;
-        selectedButton.setStyle("-fx-background-color: rgba(39, 43, 63, 0.7);");
+//        selectedButton.setStyle("-fx-background-color: rgba(39, 43, 63, 0.7);");
 
         // Mostrar el formulario asociado al botón "Inicio"
         AnchorPane selectedForm = buttonToFormMap.get(selectedButton);
