@@ -2,10 +2,14 @@ package atrumblack.clinicaveterinaria.controlador;
 
 import atrumblack.clinicaveterinaria.modelo.Cliente;
 import atrumblack.clinicaveterinaria.modelo.Mascota;
+import atrumblack.clinicaveterinaria.modelo.TipoMascota;
 import atrumblack.clinicaveterinaria.repositorio.ClienteRepositorio;
 import atrumblack.clinicaveterinaria.servicio.ClienteServicio;
 import atrumblack.clinicaveterinaria.servicio.MascotaServicio;
 //import com.jfoenix.controls.JFXButton;
+import atrumblack.clinicaveterinaria.servicio.TipoMascotaServicio;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -38,7 +42,8 @@ public class ClienteFormControlador extends FormularioControlador {
     private ClienteServicio clienteServicio;
     @Autowired
     private MascotaServicio mascotaServicio;
-
+    @Autowired
+    private TipoMascotaServicio tipoMascotaServicio;
     @FXML
     private AnchorPane cliente_form;
 
@@ -95,7 +100,7 @@ public class ClienteFormControlador extends FormularioControlador {
 
     //TextFieldMascota
     @FXML
-    private TextField cliente_text_especie_mascota;
+    private ComboBox<String> cliente_combo_especie_mascota;
     @FXML
     private TextField cliente_text_alias_mascota;
 
@@ -134,7 +139,15 @@ public class ClienteFormControlador extends FormularioControlador {
     private void configurarColumnasMascota() {
         cliente_col_id_mascota.setCellValueFactory(new PropertyValueFactory<>("idMascota"));
         cliente_col_alias_mascota.setCellValueFactory(new PropertyValueFactory<>("alias"));
-        cliente_col_especie_mascota.setCellValueFactory(new PropertyValueFactory<>("especie"));
+        // Ajustar la columna para obtener el nombre del tipo de la entidad TipoMascota
+        cliente_col_especie_mascota.setCellValueFactory(cellData -> {
+            ObjectProperty<String> especieProperty = new SimpleObjectProperty<>();
+            TipoMascota tipoMascota = cellData.getValue().getTipoMascota();
+            if (tipoMascota != null) {
+                especieProperty.setValue(tipoMascota.getNombreTipo());
+            }
+            return especieProperty;
+        });
 
         // Establecer la tabla de Mascota como no editable
         cliente_tabla_Mascota.setEditable(false);
@@ -166,7 +179,10 @@ public class ClienteFormControlador extends FormularioControlador {
         configurarColumnasMascota();
         configurarListeners();
         listarCliente();
-
+//        // Configurar el ComboBox para el campo de Sexo
+//        cliente_combo_especie_mascota.getItems().setAll(TipoMascota);
+        // Configurar el ComboBox para el campo de TipoMascota
+        cargarTiposMascotaEnComboBox();
         // Agregar un ChangeListener para manejar la selección de la tabla en tiempo real
         cliente_tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
@@ -176,7 +192,21 @@ public class ClienteFormControlador extends FormularioControlador {
             }
         });
     }
+    private void cargarTiposMascotaEnComboBox() {
+        // Obtener la lista de tipos de mascota desde tu servicio o repositorio
+        List<TipoMascota> tiposMascota = tipoMascotaServicio.listarTiposMascota(); // Ajusta esto según tu lógica de negocio
 
+//        // Configurar el ComboBox con la lista de tipos de mascota
+//        cliente_combo_especie_mascota.getItems().setAll(tiposMascota);
+        // Obtener solo los nombres de los tipos de mascota
+        List<String> nombresTiposMascota = tiposMascota.stream()
+                .map(TipoMascota::getNombreTipo)
+                .collect(Collectors.toList());
+
+        // Configurar el ComboBox con la lista de nombres de tipos de mascota
+        cliente_combo_especie_mascota.getItems().setAll(nombresTiposMascota);
+
+    }
     private void configurarListeners() {
         // Configurar el Listener para la búsqueda en tiempo real mientras se escribe
 //        cliente_text_buscar_alias.textProperty().addListener((observable, oldValue, newValue) -> buscarClientePorApellido(newValue));
@@ -308,7 +338,14 @@ public class ClienteFormControlador extends FormularioControlador {
         if (idClienteInterno != null) {
             mascota.setCliente(cliente);
             mascota.setAlias(cliente_text_alias_mascota.getText());
-            //mascota.setEspecie(cliente_text_especie_mascota.getText());
+            // Obtener el nombre del tipo de mascota desde el ComboBox
+            String nombreTipoMascota = cliente_combo_especie_mascota.getValue();
+
+            // Obtener la instancia de TipoMascota correspondiente al nombre
+            TipoMascota tipoMascota = tipoMascotaServicio.obtenerTipoMascotaPorNombre(nombreTipoMascota);
+
+            // Configurar el TipoMascota en la mascota
+            mascota.setTipoMascota(tipoMascota);
             mascota.setActivo(true);
         }
 
@@ -334,7 +371,7 @@ public class ClienteFormControlador extends FormularioControlador {
         // Limpiar la tabla cliente_tabla
         cliente_tabla.getItems().clear();
         cliente_text_alias_mascota.clear();
-        cliente_text_especie_mascota.clear();
+        cliente_combo_especie_mascota.getSelectionModel().clearSelection();
         // Limpiar la tabla cliente_tabla_Mascota
         cliente_tabla_Mascota.getItems().clear();
         initialize();
@@ -343,7 +380,7 @@ public class ClienteFormControlador extends FormularioControlador {
     public void limpiarFormularioMascota() {
         //idClienteInterno = null;
         cliente_text_alias_mascota.clear();
-        cliente_text_especie_mascota.clear();
+        cliente_combo_especie_mascota.getSelectionModel().clearSelection();
         // Limpiar la tabla cliente_tabla_Mascota
         //cliente_tabla_Mascota.getItems().clear();
     }

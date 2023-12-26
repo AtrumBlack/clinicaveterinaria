@@ -173,8 +173,8 @@ public class VeteMainControlador implements Initializable {
         buttonToFormMap.put(main_btn_facturacion, factura_form);
 
 //        // Seleccionar "Inicio" y aplicar el estilo
-//        selectedButton = main_btn_inicio;
-//        selectedButton.setStyle("-fx-background-color: rgba(39, 43, 63, 0.7);");
+        selectedButton = main_btn_cliente;
+        //selectedButton.setStyle("-fx-background-color: rgba(39, 43, 63, 0.7);");
 
         // Mostrar el formulario asociado al botón "Inicio"
         AnchorPane selectedForm = buttonToFormMap.get(selectedButton);

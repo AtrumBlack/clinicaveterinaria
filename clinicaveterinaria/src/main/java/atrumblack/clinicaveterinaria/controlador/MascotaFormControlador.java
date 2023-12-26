@@ -48,8 +48,10 @@ public class MascotaFormControlador extends FormularioControlador {
     private TextField mascota_text_raza;
 
 
+//    @FXML
+//    private TextField mascota_text_especie;
     @FXML
-    private TextField mascota_text_especie;
+    private ComboBox<String> mascota_combo_especie;
 
     @FXML
     private DatePicker mascota_text_fecha_nacimiento;
